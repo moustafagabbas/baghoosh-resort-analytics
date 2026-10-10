@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "3806c6d509fe01aac474",
+  "position": {
+    "x": 1372.3,
+    "y": 114,
+    "z": 6000,
+    "height": 120,
+    "width": 250.9,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Average Days on Market (Sold)"
+                }
+              },
+              "queryRef": "_Measures.Average Days on Market (Sold)",
+              "nativeQueryRef": "Average Days on Market (Sold)"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

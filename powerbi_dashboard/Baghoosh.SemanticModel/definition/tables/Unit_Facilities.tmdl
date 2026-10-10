@@ -1,0 +1,133 @@
+table Unit_Facilities
+	lineageTag: f3e65354-2fa1-4761-a463-b6c16aa49a86
+
+	column 'Unit ID'
+		dataType: string
+		lineageTag: 0af4653b-5e10-4b61-b4b5-215ed74e969c
+		summarizeBy: none
+		sourceColumn: Unit ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Distance to Beach km'
+		dataType: double
+		lineageTag: b072944d-a752-486c-8d3e-080a509a7580
+		summarizeBy: sum
+		sourceColumn: Distance to Beach km
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Distance to Mall km'
+		dataType: double
+		lineageTag: fa9d313f-9a1e-4633-88e2-0bdfdd6d5b31
+		summarizeBy: sum
+		sourceColumn: Distance to Mall km
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Distance to Supermarket km'
+		dataType: double
+		lineageTag: 50854cbf-2873-4820-b2c1-c3e20a7c31ef
+		summarizeBy: sum
+		sourceColumn: Distance to Supermarket km
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Distance to Mosque km'
+		dataType: double
+		lineageTag: 34bff2fa-bcb2-423e-a7d6-cdef9cd721ed
+		summarizeBy: sum
+		sourceColumn: Distance to Mosque km
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Distance to Hospital km'
+		dataType: double
+		lineageTag: 053c32f0-c6f9-4e6a-ab73-63d779964296
+		summarizeBy: sum
+		sourceColumn: Distance to Hospital km
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Distance to School km'
+		dataType: double
+		lineageTag: 88a641cd-14f0-4da0-b208-539d7c66e717
+		summarizeBy: sum
+		sourceColumn: Distance to School km
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Distance to Gym km'
+		dataType: double
+		lineageTag: 709b737a-f303-4a0c-9940-dc1a3f838b4a
+		summarizeBy: sum
+		sourceColumn: Distance to Gym km
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Distance to Clubhouse km'
+		dataType: double
+		lineageTag: e9f035c5-0dbd-4470-aa91-c9dd2a3b7bdb
+		summarizeBy: sum
+		sourceColumn: Distance to Clubhouse km
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Distance to Main Gate km'
+		dataType: double
+		lineageTag: b461affd-8b14-4e3d-8d54-3e342a3ce0ba
+		summarizeBy: sum
+		sourceColumn: Distance to Main Gate km
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Facility Proximity Score'
+		dataType: double
+		lineageTag: 652879cb-ce87-4713-9def-abff6ab74785
+		summarizeBy: sum
+		sourceColumn: Facility Proximity Score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Accessibility Score'
+		dataType: double
+		lineageTag: dd96c328-fcb1-4ff7-b5df-20c209325659
+		summarizeBy: sum
+		sourceColumn: Accessibility Score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Unit_Facilities = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("E:\UAE\Projects\AlRiyad_Realstate\baghoosh\data\cleansed\csv\Unit_Facilities.csv"), [Delimiter = ",", Columns = 12, Encoding = 65001, QuoteStyle = QuoteStyle.None]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"Unit ID", type text}, {"Distance to Beach km", type number}, {"Distance to Mall km", type number}, {"Distance to Supermarket km", type number}, {"Distance to Mosque km", type number}, {"Distance to Hospital km", type number}, {"Distance to School km", type number}, {"Distance to Gym km", type number}, {"Distance to Clubhouse km", type number}, {"Distance to Main Gate km", type number}, {"Facility Proximity Score", type number}, {"Accessibility Score", type number}})
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table
+

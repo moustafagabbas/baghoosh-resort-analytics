@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Baghoosh"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "d278d51d-3878-4bd8-b78d-de533fd8b76f"
+  }
+}

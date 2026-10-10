@@ -1,0 +1,293 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "0bc885f85af1e9e11fb4",
+  "position": {
+    "x": 1170.4,
+    "y": 661,
+    "z": 14000,
+    "height": 391,
+    "width": 721.6,
+    "tabOrder": 14000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Unit_Features"
+                    }
+                  },
+                  "Property": "Unit ID"
+                }
+              },
+              "queryRef": "Unit_Features.Unit ID",
+              "nativeQueryRef": "Unit ID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Unit_Features"
+                    }
+                  },
+                  "Property": "Property Type"
+                }
+              },
+              "queryRef": "Unit_Features.Property Type",
+              "nativeQueryRef": "Property Type"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Unit_Features"
+                    }
+                  },
+                  "Property": "Bedrooms"
+                }
+              },
+              "queryRef": "Unit_Features.Bedrooms",
+              "nativeQueryRef": "Bedrooms"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Unit_Features"
+                    }
+                  },
+                  "Property": "View Type"
+                }
+              },
+              "queryRef": "Unit_Features.View Type",
+              "nativeQueryRef": "View Type"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Unit_Features"
+                    }
+                  },
+                  "Property": "List Price"
+                }
+              },
+              "queryRef": "Unit_Features.List Price",
+              "nativeQueryRef": "List Price"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Unit_Features"
+                    }
+                  },
+                  "Property": "Days on Market"
+                }
+              },
+              "queryRef": "Unit_Features.Days on Market",
+              "nativeQueryRef": "Days on Market"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Unit_Features"
+                    }
+                  },
+                  "Property": "Number of Enquiries"
+                }
+              },
+              "queryRef": "Unit_Features.Number of Enquiries",
+              "nativeQueryRef": "Number of Enquiries"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Unit_Features"
+                    }
+                  },
+                  "Property": "Enquiries per Month Listed"
+                }
+              },
+              "queryRef": "Unit_Features.Enquiries per Month Listed",
+              "nativeQueryRef": "Enquiries per Month Listed"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Unit_Features"
+                    }
+                  },
+                  "Property": "Number of Price Reductions"
+                }
+              },
+              "queryRef": "Unit_Features.Number of Price Reductions",
+              "nativeQueryRef": "Number of Price Reductions"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Unit_Features"
+                    }
+                  },
+                  "Property": "Launch Premium over Recommended %"
+                }
+              },
+              "queryRef": "Unit_Features.Launch Premium over Recommended %",
+              "nativeQueryRef": "Launch Premium over Recommended %"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Slow-moving units (unsold, more than 365 days)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "30ad30fd320eb4b3ec16",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Unit_Features"
+              }
+            },
+            "Property": "Sales Status"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "User",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "t",
+              "Entity": "Unit_Features",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "t"
+                          }
+                        },
+                        "Property": "Sales Status"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'Unsold'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "aaa0c640c741447e9db6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Unit_Features"
+              }
+            },
+            "Property": "Days on Market"
+          }
+        },
+        "type": "Advanced",
+        "howCreated": "User",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "t",
+              "Entity": "Unit_Features",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Comparison": {
+                  "ComparisonKind": 1,
+                  "Left": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Source": "t"
+                        }
+                      },
+                      "Property": "Days on Market"
+                    }
+                  },
+                  "Right": {
+                    "Literal": {
+                      "Value": "365L"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

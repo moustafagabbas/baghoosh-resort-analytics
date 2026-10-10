@@ -1,0 +1,214 @@
+table P1_Investment
+	lineageTag: 727e14bf-8d26-421d-a51a-0c1f87eae160
+
+	column 'Unit ID'
+		dataType: string
+		lineageTag: 97ac34d7-238d-4cd2-a520-ff375a070694
+		summarizeBy: none
+		sourceColumn: Unit ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Property Type'
+		dataType: string
+		lineageTag: c3d60f15-94d4-4b52-b355-b63c937abdb0
+		summarizeBy: none
+		sourceColumn: Property Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bedrooms
+		dataType: int64
+		formatString: 0
+		lineageTag: c924fede-95e1-4e00-97fb-ee58fb02dca3
+		summarizeBy: sum
+		sourceColumn: Bedrooms
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'View Type'
+		dataType: string
+		lineageTag: 1d6cfbab-a63a-496d-b4e6-d734045d9b7b
+		summarizeBy: none
+		sourceColumn: View Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sea View'
+		dataType: string
+		lineageTag: ba688390-e4bc-4496-9535-b5db3f1442c4
+		summarizeBy: none
+		sourceColumn: Sea View
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cluster
+		dataType: string
+		lineageTag: c8f6f947-1a4d-4f1a-a587-9d4660ae13f3
+		summarizeBy: none
+		sourceColumn: Cluster
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Price Band'
+		dataType: string
+		lineageTag: dabc0fe9-aece-43e3-a23a-7b5a2cd29ffd
+		summarizeBy: none
+		sourceColumn: Price Band
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Availability Status'
+		dataType: string
+		lineageTag: 688740f2-2557-4d9d-afba-c675b356fbdd
+		summarizeBy: none
+		sourceColumn: Availability Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'List Price'
+		dataType: int64
+		formatString: 0
+		lineageTag: 676d9d09-42af-4150-98a8-885239caca29
+		summarizeBy: sum
+		sourceColumn: List Price
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Expected Annual Rental Value'
+		dataType: int64
+		formatString: 0
+		lineageTag: 09b72e54-58bf-43fe-910a-2197580de707
+		summarizeBy: sum
+		sourceColumn: Expected Annual Rental Value
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Estimated Rental Yield %'
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 4002fbae-1507-45a6-b74c-ed8bbd99fd66
+		summarizeBy: sum
+		sourceColumn: Estimated Rental Yield %
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Estimated Annual Appreciation %'
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: cedff3cd-7c4c-4ca0-a655-58dbb3fca7d3
+		summarizeBy: sum
+		sourceColumn: Estimated Annual Appreciation %
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Months Until Delivery'
+		dataType: int64
+		formatString: 0
+		lineageTag: 35706eed-111b-4ce2-9f3d-400ad1c10297
+		summarizeBy: sum
+		sourceColumn: Months Until Delivery
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Estimated Value at Handover'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7cd98758-57f4-444a-a066-38c1dcb8ca1f
+		summarizeBy: sum
+		sourceColumn: Estimated Value at Handover
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Estimated Value After 3 Years'
+		dataType: int64
+		formatString: 0
+		lineageTag: d2feaeba-57e8-4b89-9d66-56e3be9255c6
+		summarizeBy: sum
+		sourceColumn: Estimated Value After 3 Years
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Yield Score'
+		dataType: double
+		lineageTag: c0eb7cb3-5cc2-42d6-9f76-e20499bdeb58
+		summarizeBy: sum
+		sourceColumn: Yield Score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Appreciation Score'
+		dataType: double
+		lineageTag: 7181718a-4aae-4063-a07d-3b50e8040f3a
+		summarizeBy: sum
+		sourceColumn: Appreciation Score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Facility Proximity Score'
+		dataType: double
+		lineageTag: fb477bda-04ea-4048-bd69-4705480de67b
+		summarizeBy: sum
+		sourceColumn: Facility Proximity Score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Pricing Competitiveness Score'
+		dataType: double
+		lineageTag: b52b9c01-3543-443d-a262-b04ab78f6e53
+		summarizeBy: sum
+		sourceColumn: Pricing Competitiveness Score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Construction Progress Score'
+		dataType: double
+		lineageTag: aaa0bd1f-e960-4a1c-8266-550e71b5ad17
+		summarizeBy: sum
+		sourceColumn: Construction Progress Score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Enquiry Level Score'
+		dataType: double
+		lineageTag: dedfef14-95f9-400d-addc-d97baac43ff2
+		summarizeBy: sum
+		sourceColumn: Enquiry Level Score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Investment Attractiveness Score'
+		dataType: double
+		lineageTag: f06a7837-4b35-4886-bb08-95bef50e3d9d
+		summarizeBy: sum
+		sourceColumn: Investment Attractiveness Score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition P1_Investment = m
+		mode: import
+		source =
+				let
+				  Source = Excel.Workbook(File.Contents("E:\UAE\Projects\AlRiyad_Realstate\baghoosh\outputs\Baghoosh_Analysis.xlsx"), null, true),
+				  #"Navigation 1" = Source{[Item = "P1_Investment", Kind = "Sheet"]}[Data],
+				  #"Promoted headers" = Table.PromoteHeaders(#"Navigation 1", [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"Unit ID", type text}, {"Property Type", type text}, {"Bedrooms", Int64.Type}, {"View Type", type text}, {"Sea View", type text}, {"Cluster", type text}, {"Price Band", type text}, {"Availability Status", type text}, {"List Price", Int64.Type}, {"Expected Annual Rental Value", Int64.Type}, {"Estimated Rental Yield %", type number}, {"Estimated Annual Appreciation %", type number}, {"Months Until Delivery", Int64.Type}, {"Estimated Value at Handover", Int64.Type}, {"Estimated Value After 3 Years", Int64.Type}, {"Yield Score", type number}, {"Appreciation Score", type number}, {"Facility Proximity Score", type number}, {"Pricing Competitiveness Score", type number}, {"Construction Progress Score", type number}, {"Enquiry Level Score", type number}, {"Investment Attractiveness Score", type number}})
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table
+

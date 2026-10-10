@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "0dbd598f5e707953f0cf",
+  "position": {
+    "x": 969,
+    "y": 216,
+    "z": 8000,
+    "height": 120,
+    "width": 295.7,
+    "tabOrder": 8000
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Average Value at Handover"
+                }
+              },
+              "queryRef": "_Measures.Average Value at Handover",
+              "nativeQueryRef": "Average Value at Handover"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

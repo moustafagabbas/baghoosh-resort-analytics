@@ -1,0 +1,198 @@
+table Dim_Unit
+	lineageTag: 6b36f5bb-4df9-417b-b536-e13edaed35cb
+
+	column 'Unit ID'
+		dataType: string
+		lineageTag: 28021b49-79c9-4d40-84b2-a3273229e8e6
+		summarizeBy: none
+		sourceColumn: Unit ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Phase
+		dataType: int64
+		formatString: 0
+		lineageTag: 14c0f09c-643e-43af-8e29-2cb1a3fcf0b7
+		summarizeBy: sum
+		sourceColumn: Phase
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cluster
+		dataType: string
+		lineageTag: 58d743fe-06fb-4dc1-b9b8-59984bb09183
+		summarizeBy: none
+		sourceColumn: Cluster
+
+		annotation SummarizationSetBy = Automatic
+
+	column Beachfront
+		dataType: string
+		lineageTag: 144ac51e-5eba-4260-864c-af96eb79cabf
+		summarizeBy: none
+		sourceColumn: Beachfront
+
+		annotation SummarizationSetBy = Automatic
+
+	column Building
+		dataType: string
+		lineageTag: cbcc6249-2e33-4bab-b92a-ebb18afaf2c4
+		summarizeBy: none
+		sourceColumn: Building
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Unit Number'
+		dataType: string
+		lineageTag: b7cfceeb-74e0-4d7e-9605-835352d41bc0
+		summarizeBy: none
+		sourceColumn: Unit Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Property Type'
+		dataType: string
+		lineageTag: 2a6f36d6-a380-4f14-bf7d-09e75f04b0f1
+		summarizeBy: none
+		sourceColumn: Property Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bedrooms
+		dataType: int64
+		formatString: 0
+		lineageTag: 91615893-0db0-4186-82ed-9aec5781c6e2
+		summarizeBy: sum
+		sourceColumn: Bedrooms
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bathrooms
+		dataType: int64
+		formatString: 0
+		lineageTag: e257554a-5568-4c24-98cd-e33cb153f393
+		summarizeBy: sum
+		sourceColumn: Bathrooms
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Built-up Area sqm'
+		dataType: int64
+		formatString: 0
+		lineageTag: c25f8412-33e9-42e4-b171-c2eb7d355471
+		summarizeBy: sum
+		sourceColumn: Built-up Area sqm
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Plot Area sqm'
+		dataType: int64
+		formatString: 0
+		lineageTag: 10f9ac4a-8d52-4386-b70b-5746b9cbbaa2
+		summarizeBy: sum
+		sourceColumn: Plot Area sqm
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'View Type'
+		dataType: string
+		lineageTag: 39be8130-5ae1-44d5-8268-c5df0a50708f
+		summarizeBy: none
+		sourceColumn: View Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sea View'
+		dataType: string
+		lineageTag: f6c91ccd-59cb-4f37-95ab-c21ddc009650
+		summarizeBy: none
+		sourceColumn: Sea View
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Corner Unit'
+		dataType: string
+		lineageTag: 20b8c8ef-a62b-4d33-b9d6-8e118c855ef1
+		summarizeBy: none
+		sourceColumn: Corner Unit
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Private Pool'
+		dataType: string
+		lineageTag: b14f81b2-d8bc-47aa-813e-6e8ce88e2723
+		summarizeBy: none
+		sourceColumn: Private Pool
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Furnished Status'
+		dataType: string
+		lineageTag: 45e6d4aa-16da-40da-abdb-f4b86654cc38
+		summarizeBy: none
+		sourceColumn: Furnished Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Availability Status'
+		dataType: string
+		lineageTag: 44551329-9a51-4c78-891d-4a00fa9f6c61
+		summarizeBy: none
+		sourceColumn: Availability Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Construction Completion %'
+		dataType: double
+		lineageTag: f51f7843-a4fa-43ae-8cb2-23e54067018e
+		summarizeBy: sum
+		sourceColumn: Construction Completion %
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Expected Handover Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 89220b72-bc9d-476d-b339-10541b0f2f07
+		summarizeBy: none
+		sourceColumn: Expected Handover Date
+
+		variation Variation
+			isDefault
+			relationship: 227bcfea-a440-46b2-9521-db362a05c3db
+			defaultHierarchy: LocalDateTable_52447715-fab1-4850-acf6-c8b548036ac4.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Default Payment Plan' =
+			
+			LOOKUPVALUE ( Fact_Unit_Pricing[Payment Plan], Fact_Unit_Pricing[Unit ID], Dim_Unit[Unit ID] )
+		lineageTag: 70296af5-dc6b-4421-b998-93c1077af339
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Price Band' =
+			
+			LOOKUPVALUE ( Unit_Features[Price Band], Unit_Features[Unit ID], Dim_Unit[Unit ID] )
+		lineageTag: 2a8e91d4-eb2b-45e3-b25f-4da55a91df6a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Unit = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("E:\UAE\Projects\AlRiyad_Realstate\baghoosh\data\cleansed\csv\Dim_Unit.csv"), [Delimiter = ",", Columns = 19, Encoding = 65001, QuoteStyle = QuoteStyle.None]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"Unit ID", type text}, {"Phase", Int64.Type}, {"Cluster", type text}, {"Beachfront", type text}, {"Building", type text}, {"Unit Number", type text}, {"Property Type", type text}, {"Bedrooms", Int64.Type}, {"Bathrooms", Int64.Type}, {"Built-up Area sqm", Int64.Type}, {"Plot Area sqm", Int64.Type}, {"View Type", type text}, {"Sea View", type text}, {"Corner Unit", type text}, {"Private Pool", type text}, {"Furnished Status", type text}, {"Availability Status", type text}, {"Construction Completion %", type number}, {"Expected Handover Date", type date}})
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table
+

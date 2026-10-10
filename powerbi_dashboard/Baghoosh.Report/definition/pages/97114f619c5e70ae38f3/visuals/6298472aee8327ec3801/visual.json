@@ -1,0 +1,172 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "6298472aee8327ec3801",
+  "position": {
+    "x": 28,
+    "y": 712,
+    "z": 15000,
+    "height": 340,
+    "width": 1864,
+    "tabOrder": 15000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Unit"
+                    }
+                  },
+                  "Property": "Unit ID"
+                }
+              },
+              "queryRef": "Dim_Unit.Unit ID",
+              "nativeQueryRef": "Unit ID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Unit"
+                    }
+                  },
+                  "Property": "Property Type"
+                }
+              },
+              "queryRef": "Dim_Unit.Property Type",
+              "nativeQueryRef": "Property Type"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Unit"
+                    }
+                  },
+                  "Property": "Bedrooms"
+                }
+              },
+              "queryRef": "Dim_Unit.Bedrooms",
+              "nativeQueryRef": "Bedrooms"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Unit"
+                    }
+                  },
+                  "Property": "View Type"
+                }
+              },
+              "queryRef": "Dim_Unit.View Type",
+              "nativeQueryRef": "View Type"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Unit"
+                    }
+                  },
+                  "Property": "Availability Status"
+                }
+              },
+              "queryRef": "Dim_Unit.Availability Status",
+              "nativeQueryRef": "Availability Status"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Unit_Pricing"
+                    }
+                  },
+                  "Property": "List Price"
+                }
+              },
+              "queryRef": "Fact_Unit_Pricing.List Price",
+              "nativeQueryRef": "List Price"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Unit_Pricing"
+                    }
+                  },
+                  "Property": "Price per sqm"
+                }
+              },
+              "queryRef": "Fact_Unit_Pricing.Price per sqm",
+              "nativeQueryRef": "Price per sqm"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Unit_Cost"
+                    }
+                  },
+                  "Property": "Total Development Cost"
+                }
+              },
+              "queryRef": "Fact_Unit_Cost.Total Development Cost",
+              "nativeQueryRef": "Total Development Cost"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Fact_Unit_Pricing"
+                    }
+                  },
+                  "Property": "Gross Margin %"
+                }
+              },
+              "queryRef": "Fact_Unit_Pricing.Gross Margin %",
+              "nativeQueryRef": "Gross Margin %"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Unit list'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

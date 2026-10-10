@@ -1,0 +1,70 @@
+table Fact_Viewings
+	lineageTag: 3962679d-3b86-4791-8c05-f9029dcecdfd
+
+	column 'Viewing ID'
+		dataType: string
+		lineageTag: 4e8c3837-9ebf-4861-8403-835f541f810b
+		summarizeBy: none
+		sourceColumn: Viewing ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Lead ID'
+		dataType: string
+		lineageTag: 82edf211-56bc-4459-9f2b-13fa50593449
+		summarizeBy: none
+		sourceColumn: Lead ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Unit ID'
+		dataType: string
+		lineageTag: ec5a75ff-b8a1-4755-adfb-0acba1db7005
+		summarizeBy: none
+		sourceColumn: Unit ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Viewing Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: cbca0183-1926-4f77-b406-90790a5b40f3
+		summarizeBy: none
+		sourceColumn: Viewing Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Outcome
+		dataType: string
+		lineageTag: 1c38ce2d-40b3-47a9-bcdf-12bf6ee55cd4
+		summarizeBy: none
+		sourceColumn: Outcome
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Lead Source' = LOOKUPVALUE ( Fact_Leads[Lead Source], Fact_Leads[Lead ID], Fact_Viewings[Lead ID] )
+		lineageTag: 4339c754-5c54-43a3-82cb-440466f3ae35
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Broker ID' = LOOKUPVALUE ( Fact_Leads[Broker ID], Fact_Leads[Lead ID], Fact_Viewings[Lead ID] )
+		lineageTag: 0b89697f-48e8-4ab7-a79f-5e52b28ec984
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_Viewings = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("E:\UAE\Projects\AlRiyad_Realstate\baghoosh\data\cleansed\csv\Fact_Viewings.csv"), [Delimiter = ",", Columns = 5, Encoding = 65001, QuoteStyle = QuoteStyle.None]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"Viewing ID", type text}, {"Lead ID", type text}, {"Unit ID", type text}, {"Viewing Date", type date}, {"Outcome", type text}})
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table
+

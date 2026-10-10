@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "da588ed733295384bc60",
+  "position": {
+    "x": 1157.2,
+    "y": 216,
+    "z": 9000,
+    "height": 120,
+    "width": 358.4,
+    "tabOrder": 9000
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Average Development Cost"
+                }
+              },
+              "queryRef": "_Measures.Average Development Cost",
+              "nativeQueryRef": "Average Development Cost"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

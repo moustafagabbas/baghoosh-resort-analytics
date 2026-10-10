@@ -1,0 +1,353 @@
+﻿Building,Facility,Distance km
+P1-B01,Beach,0.2
+P1-B01,Mall,5.5
+P1-B01,Supermarket,1.44
+P1-B01,Mosque,1.02
+P1-B01,Hospital,9.26
+P1-B01,School,5.51
+P1-B01,Gym,0.96
+P1-B01,Clubhouse,0.87
+P1-B01,Main Gate,3.29
+P1-B02,Beach,120
+P1-B02,Mall,5.61
+P1-B02,Supermarket,1.55
+P1-B02,Mosque,1.14
+P1-B02,Hospital,9.37
+P1-B02,School,5.61
+P1-B02,Gym,1.07
+P1-B02,Clubhouse,0.98
+P1-B02,Main Gate,3.4
+P1-B03,Beach,290
+P1-B03,Mall,5.4
+P1-B03,Supermarket,1380
+P1-B03,Mosque,0.93
+P1-B03,Hospital,9.16
+P1-B03,School,5.41
+P1-B03,Gym,890
+P1-B03,Clubhouse,0.8
+P1-B03,Main Gate,3.19
+P1-B04,Beach,0.19
+P1-B04,Mall,5.62
+P1-B04,Supermarket,1.64
+P1-B04,Mosque,1.16
+P1-B04,Hospital,9.36
+P1-B04,School,5.52
+P1-B04,Gym,1150
+P1-B04,Clubhouse,1060
+P1-B04,Main Gate,3.39
+P1-B05,Beach,0.3
+P1-B05,Mall,5.43
+P1-B05,Supermarket,1.44
+P1-B05,Mosque,0.97
+P1-B05,Hospital,9180
+P1-B05,School,5.39
+P1-B05,Gym,0.95
+P1-B05,Clubhouse,0.87
+P1-B05,Main Gate,3.21
+P1-B06,Beach,0.23
+P1-B06,Mall,5.65
+P1-B06,Supermarket,1.74
+P1-B06,Mosque,1.22
+P1-B06,Hospital,9.37
+P1-B06,School,5.46
+P1-B06,Gym,1.26
+P1-B06,Clubhouse,1.17
+P1-B06,Main Gate,3.41
+P1-B07,Beach,0.25
+P1-B07,Mall,5.43
+P1-B07,Supermarket,1.37
+P1-B07,Mosque,0.95
+P1-B07,Hospital,9.19
+P1-B07,School,5.46
+P1-B07,Gym,0.88
+P1-B07,Clubhouse,0.8
+P1-B07,Main Gate,3.22
+P1-B08,Beach,0.36
+P1-B08,Mall,49.2
+P1-B08,Supermarket,0.81
+P1-B08,Mosque,1.06
+P1-B08,Hospital,8.75
+P1-B08,School,5.54
+P1-B08,Gym,0.71
+P1-B08,Clubhouse,720
+P1-B08,Main Gate,2.92
+P1-B09,Beach,0.18
+P1-B09,Mall,5.09
+P1-B09,Supermarket,1.13
+P1-B09,Mosque,1.45
+P1-B09,Hospital,8.91
+P1-B09,School,5.87
+P1-B09,Gym,1.1
+P1-B09,Clubhouse,1.11
+P1-B09,Main Gate,3.19
+P1-B10,Beach,0.17
+P1-B10,Mall,5.22
+P1-B10,Supermarket,1.05
+P1-B10,Mosque,1.11
+P1-B10,Hospital,9.04
+P1-B10,School,5.72
+P1-B10,Gym,780
+P1-B10,Clubhouse,0.75
+P1-B10,Main Gate,3.17
+P1-B11,Beach,0.36
+P1-B11,Mall,4.87
+P1-B11,Supermarket,0.91
+P1-B11,Mosque,1.29
+P1-B11,Hospital,8.69
+P1-B11,School,5.64
+P1-B11,Gym,0.94
+P1-B11,Clubhouse,0.97
+P1-B11,Main Gate,2.95
+P1-B12,Beach,0.24
+P1-B12,Mall,5.07
+P1-B12,Supermarket,0.96
+P1-B12,Mosque,1.18
+P1-B12,Hospital,8890
+P1-B12,School,5.69
+P1-B12,Gym,0.82
+P1-B12,Clubhouse,0.82
+P1-B12,Main Gate,3.08
+P1-B13,Beach,240
+P1-B13,Mall,5.11
+P1-B13,Supermarket,0.95
+P1-B13,Mosque,1.07
+P1-B13,Hospital,8.93
+P1-B13,School,5.64
+P1-B13,Gym,0.72
+P1-B13,Clubhouse,0.7
+P1-B13,Main Gate,3.07
+P1-B14,Beach,0.23
+P1-B14,Mall,5.03
+P1-B14,Supermarket,1.03
+P1-B14,Mosque,1.34
+P1-B14,Hospital,8.86
+P1-B14,School,5.77
+P1-B14,Gym,0.99
+P1-B14,Clubhouse,1.0
+P1-B14,Main Gate,3.1
+P1-B15,Beach,1.24
+P1-B15,Mall,4.26
+P1-B15,Supermarket,0.9
+P1-B15,Mosque,0.42
+P1-B15,Hospital,7.98
+P1-B15,School,4.25
+P1-B15,Gym,0.77
+P1-B15,Clubhouse,0.79
+P1-B15,Main Gate,2.02
+P1-B16,Beach,1.28
+P1-B16,Mall,4.17
+P1-B16,Supermarket,0.85
+P1-B16,Mosque,0.44
+P1-B16,Hospital,7900
+P1-B16,School,4.21
+P1-B16,Gym,0.77
+P1-B16,Clubhouse,0.8
+P1-B16,Main Gate,1.93
+P1-B17,Beach,1.13
+P1-B17,Mall,4.38
+P1-B17,Supermarket,0.88
+P1-B17,Mosque,0.33
+P1-B17,Hospital,8.11
+P1-B17,School,4.38
+P1-B17,Gym,0.69
+P1-B17,Clubhouse,0.69
+P1-B17,Main Gate,2.14
+P1-B18,Beach,1.52
+P1-B18,Mall,4.25
+P1-B18,Supermarket,1.52
+P1-B18,Mosque,1.03
+P1-B18,Hospital,7860
+P1-B18,School,3.85
+P1-B18,Gym,1.39
+P1-B18,Clubhouse,1.39
+P1-B18,Main Gate,2.01
+P1-B19,Beach,1.52
+P1-B19,Mall,3950
+P1-B19,Supermarket,1.07
+P1-B19,Mosque,0.74
+P1-B19,Hospital,7.65
+P1-B19,School,3.91
+P1-B19,Gym,1.07
+P1-B19,Clubhouse,1.1
+P1-B19,Main Gate,1.7
+P1-B20,Beach,1.13
+P1-B20,Mall,4.42
+P1-B20,Supermarket,0.96
+P1-B20,Mosque,0.4
+P1-B20,Hospital,8.14
+P1-B20,School,4.37
+P1-B20,Gym,0.75
+P1-B20,Clubhouse,0.75
+P1-B20,Main Gate,2.18
+P1-B21,Beach,1.33
+P1-B21,Mall,4.17
+P1-B21,Supermarket,0.97
+P1-B21,Mosque,0.54
+P1-B21,Hospital,7.88
+P1-B21,School,4.13
+P1-B21,Gym,0.88
+P1-B21,Clubhouse,0.9
+P1-B21,Main Gate,1.92
+P1-B22,Beach,1.68
+P1-B22,Mall,3.22
+P1-B22,Supermarket,1.03
+P1-B22,Mosque,1.51
+P1-B22,Hospital,7.04
+P1-B22,School,4.2
+P1-B22,Gym,1.5
+P1-B22,Clubhouse,1.59
+P1-B22,Main Gate,1.4
+P1-B23,Beach,1480
+P1-B23,Mall,3.5
+P1-B23,Supermarket,0.73
+P1-B23,Mosque,1.24
+P1-B23,Hospital,7.32
+P1-B23,School,4.34
+P1-B23,Gym,1.21
+P1-B23,Clubhouse,1.3
+P1-B23,Main Gate,1580
+P1-B24,Beach,1.43
+P1-B24,Mall,3.58
+P1-B24,Supermarket,0.63
+P1-B24,Mosque,1.13
+P1-B24,Hospital,7.41
+P1-B24,School,4.36
+P1-B24,Gym,1.1
+P1-B24,Clubhouse,1.19
+P1-B24,Main Gate,1.62
+P1-B25,Beach,1.44
+P1-B25,Mall,3.5
+P1-B25,Supermarket,0.84
+P1-B25,Mosque,1.41
+P1-B25,Hospital,7.33
+P1-B25,School,44.9
+P1-B25,Gym,1.33
+P1-B25,Clubhouse,1.42
+P1-B25,Main Gate,1.7
+P1-B26,Beach,1.48
+P1-B26,Mall,3.56
+P1-B26,Supermarket,0.63
+P1-B26,Mosque,1.06
+P1-B26,Hospital,7.38
+P1-B26,School,4.26
+P1-B26,Gym,1.08
+P1-B26,Clubhouse,1.17
+P1-B26,Main Gate,1.54
+P1-B27,Beach,1.77
+P1-B27,Mall,3.15
+P1-B27,Supermarket,1.05
+P1-B27,Mosque,1.46
+P1-B27,Hospital,6.97
+P1-B27,School,4.02
+P1-B27,Gym,1.5
+P1-B27,Clubhouse,1.59
+P1-B27,Main Gate,1.24
+P1-B28,Beach,1.79
+P1-B28,Supermarket,1030
+P1-B28,Mosque,1.4
+P1-B28,Hospital,6.97
+P1-B28,Gym,1.46
+P1-B28,Clubhouse,1.55
+P1-B28,Main Gate,1.18
+P2-B01,Beach,0.12
+P2-B01,Mall,5.11
+P2-B01,Hospital,8.85
+P2-B01,School,6.42
+P2-B01,Clubhouse,2.2
+P2-B01,Main Gate,3.62
+P2-B02,Beach,0.14
+P2-B02,Mall,5.13
+P2-B02,Supermarket,2.25
+P2-B02,Mosque,2.79
+P2-B02,Hospital,8.83
+P2-B02,School,6.57
+P2-B02,Gym,2.47
+P2-B02,Clubhouse,2.51
+P2-B02,Main Gate,3.76
+P2-B03,Beach,0.27
+P2-B03,Mall,4.94
+P2-B03,Supermarket,1.97
+P2-B03,Mosque,2.51
+P2-B03,Hospital,8.67
+P2-B03,School,6.31
+P2-B03,Gym,2.2
+P2-B03,Clubhouse,2.24
+P2-B03,Main Gate,3.5
+P2-B04,Beach,0.17
+P2-B04,Mall,5.08
+P2-B04,Supermarket,2.17
+P2-B04,Mosque,2.72
+P2-B04,Hospital,8.79
+P2-B04,School,6.5
+P2-B04,Gym,2.4
+P2-B04,Clubhouse,2.44
+P2-B04,Main Gate,3.69
+P2-B05,Beach,0.12
+P2-B05,Mall,5.14
+P2-B05,Supermarket,2.19
+P2-B05,Mosque,2.73
+P2-B05,Hospital,8.85
+P2-B05,School,6.55
+P2-B05,Gym,2.4
+P2-B05,Clubhouse,2.44
+P2-B05,Main Gate,3.74
+P2-B06,Beach,0.32
+P2-B06,Mall,4.97
+P2-B06,Supermarket,2.5
+P2-B06,Mosque,3.07
+P2-B06,Hospital,8.61
+P2-B06,School,6.59
+P2-B06,Gym,2.77
+P2-B06,Clubhouse,2.82
+P2-B06,Main Gate,3.79
+P2-B07,Beach,1.78
+P2-B07,Mall,3.1
+P2-B07,Supermarket,2.18
+P2-B07,Mosque,2.78
+P2-B07,Hospital,6.77
+P2-B07,School,4.93
+P2-B07,Gym,2.66
+P2-B07,Clubhouse,2.74
+P2-B07,Main Gate,2.26
+P2-B08,Beach,1.47
+P2-B08,Mall,3.57
+P2-B08,Supermarket,2.36
+P2-B08,Mosque,2.98
+P2-B08,Hospital,7.17
+P2-B08,School,5.45
+P2-B08,Gym,2.81
+P2-B08,Clubhouse,2.89
+P2-B08,Main Gate,2.76
+P2-B09,Beach,1.74
+P2-B09,Mall,3130
+P2-B09,Supermarket,2.04
+P2-B09,Mosque,2.64
+P2-B09,Hospital,6.82
+P2-B09,School,4.88
+P2-B09,Gym,2.52
+P2-B09,Clubhouse,2.61
+P2-B09,Main Gate,2.18
+P2-B10,Beach,1.38
+P2-B10,Mall,3.58
+P2-B10,Supermarket,1.96
+P2-B10,Mosque,2.58
+P2-B10,Hospital,7.27
+P2-B10,School,5.27
+P2-B10,Gym,2.41
+P2-B10,Clubhouse,2.49
+P2-B10,Main Gate,2.51
+P2-B11,Beach,1.71
+P2-B11,Mall,3.17
+P2-B11,Supermarket,2.08
+P2-B11,Mosque,2.68
+P2-B11,Hospital,6.86
+P2-B11,School,4.95
+P2-B11,Gym,2.56
+P2-B11,Clubhouse,2.64
+P2-B11,Main Gate,2.25
+P2-B12,Beach,1.46
+P2-B12,Supermarket,2.36
+P2-B12,Mosque,2.98
+P2-B12,Hospital,7.18
+P2-B12,School,5.46
+P2-B12,Main Gate,2.77

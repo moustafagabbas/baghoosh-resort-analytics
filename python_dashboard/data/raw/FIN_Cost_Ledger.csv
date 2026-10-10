@@ -1,0 +1,122 @@
+﻿Cost Line ID,Phase,Cluster,Cost Category,Budget Amount,Allocation Basis
+CL-001,1,Sea Breeze,Land & Infrastructure,45076000.00,Plot area
+CL-002,1,Sea Breeze,Land & Infrastructure,18443000.00,Plot area
+CL-003,1,Sea Breeze,Land & Infrastructure,5442000.00,Plot area
+CL-004,1,Sea Breeze,Land and Infrastructure,20168000.00,Plot area
+CL-005,1,Sea Breeze,Land & Infrastructure,13629000.00,Built-up area
+CL-006,1,Sea Breeze,LAND & INFRASTRUCTURE,"9,420,000",Built-up area
+CL-007,1,Sea Breeze,Land & Infrastructure,15512000.00,Built-up area
+CL-008,1,Sea Breeze,Land & Infrastructure,"17,184,000",Built-up area
+CL-009,1,Sea Breeze,Land & Infrastructure,4757000.00,Built-up area
+CL-010,1,Sea Breeze,Amenities & Common Area,1541000.00,Per unit
+CL-011,1,Sea Breeze,Amenities & Common Area,3388000.00,Per unit
+CL-012,1,Sea Breeze,Amenities & Common Area,3464000.00,Per unit
+CL-013,1,Sea Breeze,Amenities & Common Area,5009000.00,Per unit
+CL-014,1,Coral Bay,Land & Infrastructure,41621000.00,Plot area
+CL-015,1,Coral Bay,Land & Infrastructure,17768000.00,Plot area
+CL-016,1,Coral Bay,Land & Infrastructure,23155000.00,Plot area
+CL-017,1,Coral Bay,Land & Infrastructure,37554000.00,Plot area
+CL-018,1,Coral Bay,Land & Infrastructure,2580000.00,Built-up area
+CL-019,1,Coral Bay,Land & Infrastructure,8907000.00,Built-up area
+CL-020,1,Coral Bay,Land & Infrastructure,25769000.00,Built-up area
+CL-021,1,Coral Bay,Land & Infrastructure,7293000.00,Built-up area
+CL-022,1,Coral Bay,Land & Infrastructure,14644000.00,Built-up area
+CL-023,1,Coral Bay,Amenities & Common Area,4637000.00,Per unit
+CL-024,1,Coral Bay,Amenities & Common Area,1809000.00,Per unit
+CL-025,1,Coral Bay,Amenities & Common Area,"5,416,000",Per unit
+CL-026,1,Coral Bay,Amenities & Common Area,2254000.00,Per unit
+CL-027,1,Palm Grove,Land & Infrastructure,14666000.00,Plot area
+CL-028,1,Palm Grove,Land & Infrastructure,18439000.00,Plot area
+CL-029,1,Palm Grove,Land & Infrastructure,10002000.00,Plot area
+CL-030,1,Palm Grove,Land & Infra,29255000.00,Plot area
+CL-031,1,Palm Grove,Land & Infrastructure,9736000.00,Built-up area
+CL-032,1,Palm Grove,Land & Infrastructure,7312000.00,Built-up area
+CL-033,1,Palm Grove,Land & Infrastructure,12242000.00,Built-up area
+CL-034,1,Palm Grove,Land & Infrastructure,7305000.00,Built-up area
+CL-035,1,Palm Grove,Land & Infrastructure,3703000.00,Built-up area
+CL-036,1,Palm Grove,Amenities & Common Area,1638000.00,Per unit
+CL-037,1,Palm Grove,Amenities & Common Area,5554000.00,Per unit
+CL-038,1,Palm Grove,Amenities & Common Area,"3,638,000",Per unit
+CL-039,1,Palm Grove,Amenities & Common Area,2673000.00,Per unit
+CL-040,1,Sunset Hills,Land & Infrastructure,"15,477,000",Plot area
+CL-041,1,Sunset Hills,Land & Infrastructure,19795000.00,Plot area
+CL-042,1,Sunset Hills,Land & Infrastructure,"10,786,000",Plot area
+CL-043,1,Sunset Hills,Land & Infrastructure,34850000.00,Plot area
+CL-044,1,Sunset Hills,Land & Infrastructure,13738000.00,Built-up area
+CL-045,1,Sunset Hills,Land & Infrastructure,"5,945,000",Built-up area
+CL-046,1,Sunset Hills,Land & Infrastructure,4395000.00,Built-up area
+CL-047,1,Sunset Hills,Land & Infrastructure,8470000.00,Built-up area
+CL-048,1,Sunset Hills,Land & Infra,9898000.00,Built-up area
+CL-049,1,Sunset Hills,Amenities & Common Area,3069000.00,Per unit
+CL-050,1,Sunset Hills,Amenities & Common Area,5197000.00,Per unit
+CL-051,1,Sunset Hills,Amenities & Common Area,3267000.00,Per unit
+CL-052,1,Sunset Hills,Amenities & Common Area,"3,913,000",Per unit
+CL-053,2,Azure Coast,Land & Infrastructure,21421000.00,Plot area
+CL-054,2,Azure Coast,Land & Infrastructure,24808000.00,Plot area
+CL-055,2,Azure Coast,Land & Infrastructure,32402000.00,Plot area
+CL-056,2,Azure Coast,Land & Infrastructure,17265000.00,Plot area
+CL-057,2,Azure Coast,Land & Infrastructure,12736000.00,Built-up area
+CL-058,2,Azure Coast,Land & Infrastructure,10299000.00,Built-up area
+CL-059,2,Azure Coast,Land & Infrastructure,9389000.00,Built-up area
+CL-060,2,Azure Coast,Land & Infrastructure,8642000.00,Built-up area
+CL-061,2,Azure Coast,Land & Infrastructure,8747000.00,Built-up area
+CL-062,2,Azure Coast,Amenities & Common Areas,1724000.00,Per unit
+CL-063,2,Azure Coast,Amenities & Common Area,2739000.00,Per unit
+CL-064,2,Azure Coast,Amenities & Common Area,2721000.00,Per unit
+CL-065,2,Azure Coast,Amenities & Common Area,4604000.00,Per unit
+CL-066,2,Olive Grove,Land & Infrastructure,11166000.00,Plot area
+CL-067,2,Olive Grove,Land & Infrastructure,18175000.00,Plot area
+CL-068,2,Olive Grove,Land & Infrastructure,12189000.00,Plot area
+CL-069,2,Olive Grove,Land & Infrastructure,21353000.00,Plot area
+CL-070,2,Olive Grove,Land & Infrastructure,"8,354,000",Built-up area
+CL-071,2,Olive Grove,Land & Infra,5134000.00,Built-up area
+CL-072,2,Olive Grove,Land & Infrastructure,8091000.00,Built-up area
+CL-073,2,Olive Grove,Land & Infrastructure,4632000.00,Built-up area
+CL-074,2,Olive Grove,Land & Infrastructure,"7,014,000",Built-up area
+CL-075,2,Olive Grove,Amenities & Common Area,2583000.00,Per unit
+CL-076,2,Olive Grove,Amenities & Common Area,5437000.00,Per unit
+CL-077,2,Olive Grove,Amenities & Common Area,1764000.00,Per unit
+CL-078,2,Olive Grove,Amenities & Common Area,2160000.00,Per unit
+CL-079,1,,Amenities & Common Area,9567000.00,Built-up area
+CL-080,1,,Amenities & Common Area,19221000.00,Built-up area
+CL-081,1,,Amenities & Common Areas,10352000.00,Built-up area
+CL-082,1,,Amenities & Common Area,12514000.00,Built-up area
+CL-083,1,,Amenities & Common Area,4360000.00,Built-up area
+CL-084,1,,Professional / Management,21371000.00,% of direct cost
+CL-085,1,,Professional / Management,15237000.00,% of direct cost
+CL-086,1,,Professional / Management,7379000.00,% of direct cost
+CL-087,1,,Professional / Management,4908000.00,% of direct cost
+CL-088,1,,Professional / Management,21999000.00,% of direct cost
+CL-089,1,,Professional / Management,13128000.00,% of direct cost
+CL-090,1,,Marketing & Sales,8987000.00,Per unit
+CL-091,1,,Marketing & Sales,19020000.00,Per unit
+CL-092,1,,Marketing & Sales,14274000.00,% of direct cost
+CL-093,1,,Marketing & Sales,17822000.00,% of direct cost
+CL-094,1,,Marketing & Sales,9914000.00,% of direct cost
+CL-095,1,,Financing & Contingency,23068000.00,% of direct cost
+CL-096,1,,Financing & Contingency,22943000.00,% of direct cost
+CL-097,1,,Financing & Contingency,12479000.00,% of direct cost
+CL-098,1,,Financing & Contingency,27945000.00,% of direct cost
+CL-099,1,,Financing & Contingency,11591000.00,% of direct cost
+CL-100,2,,Amenities & Common Area,6825000.00,Built-up area
+CL-101,2,,Amenities & Common Area,5704000.00,Built-up area
+CL-102,2,,Amenities & Common Area,4545000.00,Built-up area
+CL-103,2,,Amenities & Common Area,4044000.00,Built-up area
+CL-104,2,,Amenities & Common Area,2721000.00,Built-up area
+CL-105,2,,Professional / Management,2671000.00,% of direct cost
+CL-106,2,,Professional / Management,3954000.00,% of direct cost
+CL-107,2,,Professional / Management,2933000.00,% of direct cost
+CL-108,2,,Professional / Management,4553000.00,% of direct cost
+CL-109,2,,Professional / Management,4795000.00,% of direct cost
+CL-110,2,,Professional / Management,16854000.00,% of direct cost
+CL-111,2,,Marketing & Sales,8604000.00,Per unit
+CL-112,2,,Marketing,3316000.00,Per unit
+CL-113,2,,Marketing & Sales,9196000.00,% of direct cost
+CL-114,2,,Marketing & Sales,1281000.00,% of direct cost
+CL-115,2,,Sales & Marketing,7403000.00,% of direct cost
+CL-116,2,,Financing & Contingency,5255000.00,% of direct cost
+CL-117,2,,Finance & Contingency,6204000.00,% of direct cost
+CL-118,2,,Financing & Contingency,15815000.00,% of direct cost
+CL-119,2,,Financing & Contingency,10611000.00,% of direct cost
+CL-120,2,,Financing & Contingency,3835000.00,% of direct cost
+CL-121,1,Coral Bay,Amenities & Common Area,"5,416,000",Per unit

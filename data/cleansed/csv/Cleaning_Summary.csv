@@ -1,0 +1,40 @@
+﻿Source File,Issue Type,Number of Records Affected,Action Taken
+COM_Payment_Plans.xlsx,No issues found,0,Loaded as the reference list of the six payment plans
+COM_Pricing_Policy.xlsx,Percent stored as text,4,Converted '12%' text to the decimal 0.12
+QS_Construction_Rates.xlsx,Title row above header,1,Skipped rows above the real header row
+QS_Construction_Rates.xlsx,Notes row below data,1,Dropped rows that are not a property type
+ERP_Project_Structure.xlsx,Inconsistent cluster name,6,Mapped spellings to the most common form
+ERP_Project_Structure.xlsx,Phase 2 building with Phase 1 date,1,Reset start = target completion − median Phase 2 build duration
+GIS_Distances.csv,Distance in metres,18,"Values ≥ 75 divided by 1,000"
+GIS_Distances.csv,Distance outlier,2,"Set to blank, then filled with the cluster median for that facility"
+GIS_Distances.csv,Missing facility row,8,Filled with the cluster median for that facility
+PMO_Build_Progress.csv,Percent stored as fraction,30,Values ≤ 1 multiplied by 100
+PMO_Build_Progress.csv,Missing month,26,"Reported; only the latest month is used, so gaps are left as they are"
+ERP_Unit_Master.xlsx,Duplicate unit row,18,Kept the first row per Unit ID
+ERP_Unit_Master.xlsx,Inconsistent property type,27,Mapped villa/Vila/VILLA etc. to the six types
+ERP_Unit_Master.xlsx,Inconsistent flag value,66,Y / 1 / TRUE / yes -> Yes ; N / 0 / FALSE / no -> No
+ERP_Unit_Master.xlsx,Area stored as text,36,Stripped 'sqm' / 'm2' / spaces and converted to numbers
+ERP_Unit_Master.xlsx,Impossible area,8,Recovered from price list ÷ price per sqm or /10 (6); else type+bedroom median
+ERP_Unit_Master.xlsx,Non-standard date format,27,"Parsed dd/mm/yyyy, dd-mm-yyyy and dd-Mon-yyyy text to dates"
+ERP_Unit_Master.xlsx,Missing value,64,Bathrooms: type+bedroom median; View Type: building mode for same sea-view flag; Furnished: type mode; Handover: building target completion
+FIN_Cost_Ledger.csv,Duplicate ledger line,1,"Dropped the later copy (same phase, cluster, category, amount, basis)"
+FIN_Cost_Ledger.csv,Amount stored as text,10,Removed thousands separators and converted to numbers
+FIN_Cost_Ledger.csv,Inconsistent category name,10,Mapped by keyword to the five categories
+COM_Price_List.csv,Extra zero in price,10,Divided by 10 (list ÷ cash price was ~10x the policy ratio)
+COM_Price_List.csv,Price below minimum viable price,6,Rebuilt list price from cash price ÷ (1 − cash discount)
+COM_Price_List.csv,Price per sqm mismatch,43,Recalculated as list price ÷ built-up area
+CRM_Brokers.xlsx,Trailing spaces / inconsistent capitals,7,Trimmed spaces and applied Title Case
+CRM_Leads.csv,Duplicate lead,117,Kept the lowest Lead ID per customer + unit + date
+CRM_Leads.csv,Non-standard date format,176,"Parsed dd/mm/yyyy, dd-Mon-yyyy and yyyymmdd text to dates"
+CRM_Leads.csv,Non-standard lead source,235,"FB/Facebook/Instagram -> Meta, Portal -> Property Portal, etc."
+CRM_Leads.csv,Missing broker,147,Recovered from the lead's reservation (10); rest set to UNASSIGNED
+CRM_Viewings.csv,Orphan lead ID,25,Removed (Lead ID does not exist in the CRM leads)
+CRM_Viewings.csv,Viewing before lead created,32,Year typo fixed (+1 year) where that fits (20); else lead date + median lag (11 days)
+CRM_Reservations.csv,Inconsistent status,19,Active/ACTIVE/active -> Active; Canceled -> Cancelled
+CRM_Reservations.csv,Expiry before reservation date,9,Expiry = reservation date + standard 30-day hold
+CRM_Reservations.csv,Inconsistent plan name,19,Parsed down-payment % and years to the official plan name
+FIN_Sales_Contracts.csv,Inconsistent plan name,9,Parsed down-payment % and years to the official plan name
+FIN_Sales_Contracts.csv,Down payment mismatch,7,Recalculated as contract price × plan down-payment %
+MKT_Market_Comps.xlsx,Inconsistent compound name,32,Mapped case/spacing variants and a ' Resort' suffix to one name
+MKT_Market_Comps.xlsx,Rent entered monthly,16,Rent ÷ price below 1.5% -> multiplied by 12
+ERP_Unit_Master.xlsx,Outdated availability status,8,Status derived from contracts and active reservations; ERP mismatches listed in QA

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "5b661c1e79fba4569b39",
+  "position": {
+    "x": 1103.4,
+    "y": 114,
+    "z": 5000,
+    "height": 120,
+    "width": 250.9,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Enquiry to Sale %"
+                }
+              },
+              "queryRef": "_Measures.Enquiry to Sale %",
+              "nativeQueryRef": "Enquiry to Sale %"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

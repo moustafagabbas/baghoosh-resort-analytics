@@ -1,0 +1,69 @@
+table Fact_Leads
+	lineageTag: 029b0a8f-b4bd-4f5e-9822-c021844fc35d
+
+	column 'Lead ID'
+		dataType: string
+		lineageTag: cdb627d9-5b97-4b1f-853a-c12bc2b4369f
+		summarizeBy: none
+		sourceColumn: Lead ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Created Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: b3a1510f-f82c-4f5e-986d-209022ddb40c
+		summarizeBy: none
+		sourceColumn: Created Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Unit ID'
+		dataType: string
+		lineageTag: c8667500-356d-4ee6-90c2-d7470facadcb
+		summarizeBy: none
+		sourceColumn: Unit ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Broker ID'
+		dataType: string
+		lineageTag: 880f2726-b80a-4fa8-a136-3b1dc8528c07
+		summarizeBy: none
+		sourceColumn: Broker ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Lead Source'
+		dataType: string
+		lineageTag: 7828342a-94da-439b-859b-5ed238b4450a
+		summarizeBy: none
+		sourceColumn: Lead Source
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Lead Status'
+		dataType: string
+		lineageTag: ffd95be6-d9af-40bf-a03b-8e9cc091e6d8
+		summarizeBy: none
+		sourceColumn: Lead Status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_Leads = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("E:\UAE\Projects\AlRiyad_Realstate\baghoosh\data\cleansed\csv\Fact_Leads.csv"), [Delimiter = ",", Columns = 6, Encoding = 65001, QuoteStyle = QuoteStyle.None]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"Lead ID", type text}, {"Created Date", type date}, {"Unit ID", type text}, {"Broker ID", type text}, {"Lead Source", type text}, {"Lead Status", type text}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Changed column type","Property Portal","Olx",Replacer.ReplaceText,{"Lead Source"})
+				in
+				    #"Replaced Value"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

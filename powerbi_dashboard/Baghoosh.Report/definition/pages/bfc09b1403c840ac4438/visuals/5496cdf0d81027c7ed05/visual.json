@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "5496cdf0d81027c7ed05",
+  "position": {
+    "x": 1282.7,
+    "y": 216,
+    "z": 9000,
+    "height": 120,
+    "width": 295.7,
+    "tabOrder": 9000
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Average Value After 3 Years"
+                }
+              },
+              "queryRef": "_Measures.Average Value After 3 Years",
+              "nativeQueryRef": "Average Value After 3 Years"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

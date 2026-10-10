@@ -1,0 +1,281 @@
+table _Measures
+	lineageTag: 04e8197a-9665-45c1-959c-10f454c7b226
+
+	measure 'Total Units' = COUNTROWS(Dim_Unit)
+		formatString: 0
+		lineageTag: 92791398-b24e-4637-9aca-afedcaa88143
+
+	measure 'Phase 1 Units' = CALCULATE( [Total Units], Dim_Unit[Phase] = 1 )
+		formatString: 0
+		lineageTag: 5d0cba96-f546-49d4-951f-7a6698a3aa8b
+
+	measure 'Phase 2 Units' = CALCULATE ( [Total Units], Dim_Unit[Phase] = 2 )
+		formatString: 0
+		lineageTag: dde33f7d-5667-43d1-a5fd-5151ddff49ef
+
+	measure 'Available Units' = CALCULATE ( [Total Units], Dim_Unit[Availability Status] = "Available" )
+		formatString: 0
+		lineageTag: 64ec0684-f33b-49df-a034-dc8d92123baf
+
+	measure 'Reserved Units' = CALCULATE ( [Total Units], Dim_Unit[Availability Status] = "Reserved" )
+		formatString: 0
+		lineageTag: 6f95d8fe-a1a0-4dd6-b314-0608043f0e5c
+
+	measure 'Sold Units' = CALCULATE ( [Total Units], Dim_Unit[Availability Status] = "Sold" )
+		formatString: 0
+		lineageTag: cfd8fe81-03d9-441c-bc22-c979c389c936
+
+	measure 'Planned Units' = CALCULATE ( [Total Units], Dim_Unit[Availability Status] = "Planned" )
+		formatString: 0
+		lineageTag: e58f9cec-69ca-45a5-a71e-ebd0529bfcea
+
+	measure 'Sold Share of Phase 1' = DIVIDE ( [Sold Units], [Phase 1 Units] )
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 17fb550c-2aae-4f45-80e7-f890c2abac97
+
+	measure 'Inventory Value' = ```
+			
+			    CALCULATE ( SUM ( Fact_Unit_Pricing[List Price] ), Dim_Unit[Availability Status] = "Available" )
+			```
+		formatString: #,0
+		lineageTag: 4293c0e8-e098-4586-b50f-bb7c0e1e5d76
+
+	measure 'Average List Price' = AVERAGE ( Fact_Unit_Pricing[List Price] )
+		formatString: #,0
+		lineageTag: 678f0e8c-ead6-4e6c-aeac-ea81611701c0
+
+	measure 'Median List Price' = MEDIAN ( Fact_Unit_Pricing[List Price] )
+		formatString: #,0
+		lineageTag: 754bdc70-98ca-42b0-8567-df401e8b18c9
+
+	measure 'Average Price per sqm' = AVERAGE ( Fact_Unit_Pricing[Price per sqm] )
+		formatString: #,0
+		lineageTag: 3e6a692c-99ea-4652-ade1-b4b21e84f146
+
+	measure 'Average Selling Price' = AVERAGE ( Fact_Sales[Contract Price] )
+		formatString: #,0
+		lineageTag: 08548108-3ea1-45b7-8b27-59ca889606c1
+
+	measure 'Average Development Cost' = AVERAGE ( Fact_Unit_Cost[Total Development Cost] )
+		formatString: #,0
+		lineageTag: f0ceba7f-b459-48c5-84e3-3a50410144cc
+
+	measure 'Average Dev Cost per sqm' = AVERAGE ( Fact_Unit_Cost[Development Cost per sqm] )
+		formatString: #,0
+		lineageTag: a13a714e-2ec3-4271-bc8b-7b48a6ee814b
+
+	measure 'Average Gross Profit' = AVERAGE ( Fact_Unit_Pricing[Gross Profit] )
+		formatString: #,0
+		lineageTag: 490a996d-2dbf-435c-be3b-75f0870a9dc8
+
+	measure 'Average Gross Margin' = AVERAGE ( Fact_Unit_Pricing[Gross Margin %] )
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: a1defeb4-9e4d-4e59-833b-68ecce7e4ab6
+
+	measure 'Average Competitiveness' = AVERAGE ( Unit_Features[Pricing Competitiveness Score] )
+		formatString: 0.0
+		lineageTag: 74323953-a199-4a0f-ade0-388e90901e2d
+
+	measure 'Priced Units' = COUNTROWS ( Fact_Unit_Pricing )
+		formatString: 0
+		lineageTag: 192c3ff6-1f73-4c51-ae7e-60f304b81494
+
+	measure 'Average Phase 1 Development Cost' = ```
+			
+			    CALCULATE ( [Average Development Cost], Dim_Unit[Phase] = 1 )
+			```
+		formatString: #,0
+		lineageTag: f20ac7cf-3c6a-4566-acbe-891099d33f12
+
+	measure 'Sea View Premium %' = ```
+			
+			    DIVIDE (
+			        CALCULATE ( [Average Price per sqm], Dim_Unit[Sea View] = "Yes" ),
+			        CALCULATE ( [Average Price per sqm], Dim_Unit[Sea View] = "No" )
+			    ) - 1
+			```
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 66b4c703-b3c3-4222-8792-c1333fdd2b60
+
+	measure Enquiries = COUNTROWS ( Fact_Leads )
+		formatString: 0
+		lineageTag: ce366f29-b4d0-49d0-b240-25b228d1b4a4
+
+	measure Viewings = COUNTROWS ( Fact_Viewings )
+		formatString: 0
+		lineageTag: c5917af9-30d5-435f-b5a8-ba698987e548
+
+	measure 'Enquiry to Viewing %' = DIVIDE ( [Viewings], [Enquiries] )
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: aeba987d-1422-41ca-9010-c634ee82bb65
+
+	measure Sales = COUNTROWS ( Fact_Sales )
+		formatString: 0
+		lineageTag: a0268ce9-a0ab-472c-bbb3-c727b3de1a73
+
+	measure 'Sales Value' = SUM ( Fact_Sales[Contract Price] )
+		formatString: #,0
+		lineageTag: 37b2a3b3-e76a-4b49-9dd3-c76b84508ea2
+
+	measure Reservations = COUNTROWS ( Fact_Reservations )
+		formatString: 0
+		lineageTag: 467717e8-e19c-43a5-aa23-249a43e992c1
+
+	measure Measure
+		lineageTag: aef3b9d5-63f3-4f3e-be0e-8b9b3f18eaed
+
+		annotation 43dbc3e8-3a1c-4b6f-9923-b49ff7d6691c = True
+
+	measure 'Measure 2'
+		lineageTag: a1c4bb05-31a7-4bae-ba55-c4e69cf87ee0
+
+		annotation 43dbc3e8-3a1c-4b6f-9923-b49ff7d6691c = True
+
+	measure 'Viewing to Reservation %' = DIVIDE ( [Reservations], [Viewings] )
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: bab96db6-1eed-48cd-a7ad-839210599074
+
+	measure 'Reservation to Sale %' = DIVIDE ( [Sales], [Reservations] )
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 2fc33271-aceb-4e5f-9a60-01a40578baee
+
+	measure 'Enquiry to Sale %' = DIVIDE ( [Sales], [Enquiries] )
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: a0cd06fe-3284-4844-80a3-78d77d78ea27
+
+	measure 'Average Discount vs List' = AVERAGE ( Fact_Sales[Discount vs List %] )
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: fa994ce0-67db-44a0-b7bc-ac7aecf7ab70
+
+	measure 'Average Days on Market (Sold)' = ```
+			
+			    CALCULATE ( AVERAGE ( Unit_Features[Days on Market] ), Unit_Features[Sales Status] = "Sold" )
+			```
+		formatString: 0
+		lineageTag: c90662ad-4aee-4296-8211-f48a7a258225
+
+	measure 'Average Days on Market (Unsold)' = ```
+			
+			    CALCULATE ( AVERAGE ( Unit_Features[Days on Market] ), Unit_Features[Sales Status] = "Unsold" )
+			```
+		formatString: 0
+		lineageTag: 9b7b09f6-c6cd-4415-8ed7-140ca20af66b
+
+	measure 'Slow-Moving Units' = ```
+			
+			    CALCULATE ( COUNTROWS ( Unit_Features ),
+			                Unit_Features[Sales Status] = "Unsold", Unit_Features[Days on Market] > 365 )
+			```
+		formatString: 0
+		lineageTag: e452b080-e5ab-4ce3-8a0c-d0f38eb86dfa
+
+	measure 'Average Rental Yield' = AVERAGE ( P1_Investment[Estimated Rental Yield %] )
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: a1857684-d29e-484b-9fd0-15354a48e221
+
+	measure 'Average Appreciation' = AVERAGE ( P1_Investment[Estimated Annual Appreciation %] )
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 79a39812-284d-42ac-a983-73da0f6a951b
+
+	measure 'Average Annual Rent' = AVERAGE ( P1_Investment[Expected Annual Rental Value] )
+		formatString: #,0
+		lineageTag: 5c216022-e629-4219-a5bd-36f0a18c69c3
+
+	measure 'Average Value at Handover' = AVERAGE ( P1_Investment[Estimated Value at Handover] )
+		formatString: #,0
+		lineageTag: 14721e67-2cc7-495a-8f11-758745bbaaa9
+
+	measure 'Average Value After 3 Years' = AVERAGE ( P1_Investment[Estimated Value After 3 Years] )
+		formatString: #,0
+		lineageTag: 86096f6b-e26b-46ec-a2c3-c51e57e14c13
+
+	measure 'Average Attractiveness' = AVERAGE ( P1_Investment[Investment Attractiveness Score] )
+		formatString: 0.0
+		lineageTag: 6a50b513-4ce1-4e0b-9321-a75f5496ac43
+
+	measure 'P2 Units' = COUNTROWS ( P2_Pricing )
+		formatString: 0
+		lineageTag: bacbb35a-daa7-41c1-8775-36c5979aea84
+
+	measure 'Measure 3'
+		lineageTag: 19fc2282-610c-423f-9608-e7767a00193a
+
+		annotation 43dbc3e8-3a1c-4b6f-9923-b49ff7d6691c = True
+
+	measure 'P2 Forecast Development Cost' = SUM ( P2_Pricing[Forecast Development Cost] )
+		formatString: #,0
+		lineageTag: bbe27a5f-2616-4c5d-968d-c77474342a22
+
+	measure 'Measure 4'
+		lineageTag: 6a85683d-fb9e-4c95-b7b3-c31e91b07912
+
+		annotation 43dbc3e8-3a1c-4b6f-9923-b49ff7d6691c = True
+
+	measure 'P2 Avg Predicted Market Price' = AVERAGE ( P2_Pricing[Predicted Market Price] )
+		formatString: #,0
+		lineageTag: 5ebaa495-eca4-4b35-b35e-4c387659a1f0
+
+	measure 'P2 Avg Recommended Launch Price' = AVERAGE ( P2_Pricing[Recommended Launch Price] )
+		formatString: #,0
+		lineageTag: 4caa0d1c-26fc-41d8-9d15-da3ae8a7178e
+
+	measure 'Measure 5'
+		lineageTag: c8b87b0b-0f4b-4192-9eb4-b976f1d07c7a
+
+		annotation 43dbc3e8-3a1c-4b6f-9923-b49ff7d6691c = True
+
+	measure 'P2 Recommended Price per sqm' = ```
+			
+			    DIVIDE ( SUM ( P2_Pricing[Recommended Launch Price] ), SUM ( P2_Pricing[Built-up Area sqm] ) )
+			```
+		formatString: #,0
+		lineageTag: 445057c7-e97b-4d1c-8f68-a3203cdef4a8
+
+	measure 'P2 Phase 1 Comparable per sqm' = AVERAGE ( P2_Pricing[Phase 1 Comparable Price per sqm] )
+		formatString: #,0
+		lineageTag: 40181f8c-140b-4f57-b609-4d1f241ef0cb
+
+	measure 'P2 Expected Gross Margin' = ```
+			
+			    DIVIDE ( SUM ( P2_Pricing[Recommended Launch Price] ) - SUM ( P2_Pricing[Forecast Development Cost] ),
+			             SUM ( P2_Pricing[Recommended Launch Price] ) )
+			```
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 5a84456d-c22a-49b4-bdbb-ca4b1649aae6
+
+	measure 'P2 Launch Premium vs Phase 1' = DIVIDE ( [P2 Recommended Price per sqm], [P2 Phase 1 Comparable per sqm] ) - 1
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: bb7a9c0e-1f19-4fed-9ac2-56023631fe3b
+
+	measure 'P2 Cost Increase %' = MAX ( P2_Pricing[Forecast Construction Cost Increase %] )
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 6d4317a9-80d0-44c7-8670-e016726b3d92
+
+	measure 'Unit Days on Market' = AVERAGE ( Unit_Features[Days on Market] )
+		formatString: 0
+		displayFolder: Added for visuals
+		lineageTag: a0ec6f58-d2a4-49a4-a031-dbe1aebd0c19
+
+	measure 'Unit Launch Premium %' = AVERAGE ( Unit_Features[Launch Premium over Recommended %] )
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Added for visuals
+		lineageTag: 23b68bc8-7ce0-4939-9c19-8ef758eb7711
+
+	measure 'Unit Built-up Area sqm' = AVERAGE ( Dim_Unit[Built-up Area sqm] )
+		formatString: #,0
+		displayFolder: Added for visuals
+		lineageTag: 40196e97-f1f8-4323-b0f9-ce91a6224276
+
+	partition _Measures = m
+		mode: import
+		source =
+				let
+				  Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Removed Columns" = Table.RemoveColumns(Source,{"Column1"})
+				in
+				  #"Removed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

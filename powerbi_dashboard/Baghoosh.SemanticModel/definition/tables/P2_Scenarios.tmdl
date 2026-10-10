@@ -1,0 +1,95 @@
+table P2_Scenarios
+	lineageTag: 3cfc8ee1-69ab-470d-8666-ee966600d695
+
+	column Scenario
+		dataType: string
+		lineageTag: 6ee4dd85-e706-4386-b846-0e8062020380
+		summarizeBy: none
+		sourceColumn: Scenario
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Price Change vs Recommended'
+		dataType: string
+		lineageTag: ad3d5c35-ef89-4f38-90fc-d96959ed01b2
+		summarizeBy: none
+		sourceColumn: Price Change vs Recommended
+
+		annotation SummarizationSetBy = Automatic
+
+	column Units
+		dataType: string
+		lineageTag: 34260354-fe14-4cfa-989a-4c67f92ab699
+		summarizeBy: none
+		sourceColumn: Units
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Average Selling Price'
+		dataType: string
+		lineageTag: 13f965ab-15f7-4870-8ab2-84626a7e61d2
+		summarizeBy: none
+		sourceColumn: Average Selling Price
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Average Price per sqm'
+		dataType: string
+		lineageTag: a0cae175-38b7-4577-a7bc-d2b56d752ded
+		summarizeBy: none
+		sourceColumn: Average Price per sqm
+
+		annotation SummarizationSetBy = Automatic
+
+	column Revenue
+		dataType: string
+		lineageTag: b24c8e21-4107-444a-9b41-d80dc04e2730
+		summarizeBy: none
+		sourceColumn: Revenue
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Forecast Development Cost'
+		dataType: string
+		lineageTag: dd2c86bb-5d08-4792-9b16-3d42c1a3e590
+		summarizeBy: none
+		sourceColumn: Forecast Development Cost
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gross Profit'
+		dataType: string
+		lineageTag: 9b6fe36d-818b-46d1-979a-a24bb7221eb4
+		summarizeBy: none
+		sourceColumn: Gross Profit
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Gross Margin'
+		dataType: double
+		lineageTag: 7e9ff7f3-624c-4606-921a-b99e54503c02
+		summarizeBy: sum
+		sourceColumn: Gross Margin
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition P2_Scenarios = m
+		mode: import
+		source =
+				let
+				  Source = Excel.Workbook(File.Contents("E:\UAE\Projects\AlRiyad_Realstate\baghoosh\outputs\Baghoosh_Analysis.xlsx"), null, true),
+				  #"Navigation 1" = Source{[Item = "P2_Scenarios", Kind = "Sheet"]}[Data],
+				  #"Changed column type" = Table.TransformColumnTypes(#"Navigation 1", {{"Column1", type text}}),
+				    #"Removed Top Rows" = Table.Skip(#"Changed column type",1),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Removed Top Rows", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Scenario", type text}, {"Price Change vs Recommended", type any}, {"Units", type any}, {"Average Selling Price", type any}, {"Average Price per sqm", type any}, {"Revenue", type any}, {"Forecast Development Cost", type any}, {"Gross Profit", type any}, {"Gross Margin", type number}}),
+				    #"Kept First Rows" = Table.FirstN(#"Changed Type",3)
+				in
+				    #"Kept First Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

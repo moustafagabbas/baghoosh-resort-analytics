@@ -1,0 +1,111 @@
+table Fact_Unit_Cost
+	lineageTag: 39401559-21bb-4350-b8fa-87e0ba8e4f85
+
+	column 'Unit ID'
+		dataType: string
+		lineageTag: 8dfe3676-a296-4d4d-8f7f-658553c75cac
+		summarizeBy: none
+		sourceColumn: Unit ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Construction Cost per sqm'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6422bacc-2a0a-4c3c-b2a7-db25869d5d12
+		summarizeBy: sum
+		sourceColumn: Construction Cost per sqm
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Direct Construction Cost'
+		dataType: int64
+		formatString: 0
+		lineageTag: fa4d10e0-419f-41cc-a03c-b1f675e47c68
+		summarizeBy: sum
+		sourceColumn: Direct Construction Cost
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Land & Infrastructure Allocation'
+		dataType: double
+		lineageTag: d492a037-7982-481e-817a-38cd994f72e0
+		summarizeBy: sum
+		sourceColumn: Land & Infrastructure Allocation
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Amenities & Common Area Allocation'
+		dataType: double
+		lineageTag: ba3f2e7f-1091-45df-ad56-14dbeeb21203
+		summarizeBy: sum
+		sourceColumn: Amenities & Common Area Allocation
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Professional / Management Cost'
+		dataType: double
+		lineageTag: 367347af-eb5d-4e81-8cfa-b5f444133c39
+		summarizeBy: sum
+		sourceColumn: Professional / Management Cost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Marketing & Sales Allocation'
+		dataType: double
+		lineageTag: 1b260e7f-aa67-47c4-b94c-d26f638b832c
+		summarizeBy: sum
+		sourceColumn: Marketing & Sales Allocation
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Financing & Contingency'
+		dataType: double
+		lineageTag: 6ad1ab9e-2c55-4937-b5d3-1e4d2f523970
+		summarizeBy: sum
+		sourceColumn: Financing & Contingency
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Total Development Cost'
+		dataType: double
+		lineageTag: bc2f10cb-cc58-4e1e-8697-079b92da0adb
+		summarizeBy: sum
+		sourceColumn: Total Development Cost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Development Cost per sqm'
+		dataType: double
+		lineageTag: 5f265900-c046-4bee-a1f7-1b7a91497cf1
+		summarizeBy: sum
+		sourceColumn: Development Cost per sqm
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Fact_Unit_Cost = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("E:\UAE\Projects\AlRiyad_Realstate\baghoosh\data\cleansed\csv\Fact_Unit_Cost.csv"), [Delimiter = ",", Columns = 10, Encoding = 65001, QuoteStyle = QuoteStyle.None]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"Unit ID", type text}, {"Construction Cost per sqm", Int64.Type}, {"Direct Construction Cost", Int64.Type}, {"Land & Infrastructure Allocation", type number}, {"Amenities & Common Area Allocation", type number}, {"Professional / Management Cost", type number}, {"Marketing & Sales Allocation", type number}, {"Financing & Contingency", type number}, {"Total Development Cost", type number}, {"Development Cost per sqm", type number}})
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,39 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["Dim_Unit","Dim_Payment_Plan","Dim_Broker","Dim_Date","Unit_Facilities","Fact_Unit_Cost","Fact_Unit_Pricing","Fact_Price_History","Fact_Leads","Fact_Viewings","Fact_Reservations","Fact_Sales","Unit_Features","P1_Investment","P2_Pricing","P2_Scenarios","Dim_Lead_Source","_Measures"]
+
+annotation PBI_ProTooling = ["DaxQueryView_Desktop","DevMode"]
+
+ref table Dim_Unit
+ref table DateTableTemplate_b2ca8ce6-cf92-44dc-a261-16faf1ca0e8b
+ref table LocalDateTable_52447715-fab1-4850-acf6-c8b548036ac4
+ref table Dim_Payment_Plan
+ref table Dim_Broker
+ref table Dim_Date
+ref table Unit_Facilities
+ref table Fact_Unit_Cost
+ref table Fact_Unit_Pricing
+ref table Fact_Price_History
+ref table Fact_Leads
+ref table Fact_Viewings
+ref table Fact_Reservations
+ref table LocalDateTable_a61f5a51-5a05-437c-8133-88994e36e9d5
+ref table Fact_Sales
+ref table Unit_Features
+ref table P1_Investment
+ref table P2_Pricing
+ref table P2_Scenarios
+ref table Dim_Lead_Source
+ref table _Measures
+
+ref cultureInfo en-US
+

@@ -1,0 +1,261 @@
+table P2_Pricing
+	lineageTag: 562df070-ceb3-46a0-ba77-26bff09fd937
+
+	column 'Unit ID'
+		dataType: string
+		lineageTag: 9fad9b1e-ec99-4d82-9685-419dcd5c8132
+		summarizeBy: none
+		sourceColumn: Unit ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cluster
+		dataType: string
+		lineageTag: 18f0ba15-7a65-403c-916f-e33fb0407cbd
+		summarizeBy: none
+		sourceColumn: Cluster
+
+		annotation SummarizationSetBy = Automatic
+
+	column Building
+		dataType: string
+		lineageTag: 7f8f1a2d-2631-4b84-b47f-64268cefe8cc
+		summarizeBy: none
+		sourceColumn: Building
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Property Type'
+		dataType: string
+		lineageTag: 42e86f1c-821e-4253-b62c-9f39687a172a
+		summarizeBy: none
+		sourceColumn: Property Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bedrooms
+		dataType: int64
+		formatString: 0
+		lineageTag: 71dcdfea-f12b-4b82-a60e-3473fd59c9f6
+		summarizeBy: sum
+		sourceColumn: Bedrooms
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Built-up Area sqm'
+		dataType: double
+		lineageTag: d5f298b1-36cb-4bca-bb6b-be96f24c4788
+		summarizeBy: sum
+		sourceColumn: Built-up Area sqm
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'View Type'
+		dataType: string
+		lineageTag: 9445e054-64fa-4515-92bb-b035a106ba2f
+		summarizeBy: none
+		sourceColumn: View Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sea View'
+		dataType: string
+		lineageTag: 34075340-e5cb-44fb-8c7c-6b945ab4cc8b
+		summarizeBy: none
+		sourceColumn: Sea View
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Private Pool'
+		dataType: string
+		lineageTag: 1df8d146-2e8c-4392-9dca-4ad0f901d071
+		summarizeBy: none
+		sourceColumn: Private Pool
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Corner Unit'
+		dataType: string
+		lineageTag: 15d9306a-fc8d-4339-b99e-1ab09f11f5cc
+		summarizeBy: none
+		sourceColumn: Corner Unit
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Phase 1 Construction Cost Benchmark (per sqm)'
+		dataType: int64
+		formatString: 0
+		lineageTag: ef1a9b8d-9f7c-4c61-b464-9c122a61401b
+		summarizeBy: sum
+		sourceColumn: Phase 1 Construction Cost Benchmark (per sqm)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Construction Cost per sqm (today)'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7806a01a-358d-435e-ba2e-bb492621c23e
+		summarizeBy: sum
+		sourceColumn: Construction Cost per sqm (today)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Forecast Construction Cost Increase %'
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 28528861-5b97-4699-88fc-d37003f2dd08
+		summarizeBy: sum
+		sourceColumn: Forecast Construction Cost Increase %
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Development Cost (today)'
+		dataType: int64
+		formatString: 0
+		lineageTag: 802c7df7-bcce-4d21-8a2e-4f9f0ab220dd
+		summarizeBy: sum
+		sourceColumn: Development Cost (today)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Forecast Development Cost'
+		dataType: int64
+		formatString: 0
+		lineageTag: d76870ea-a4c2-4bc3-a8a3-20142d61f40a
+		summarizeBy: sum
+		sourceColumn: Forecast Development Cost
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Forecast Development Cost per sqm'
+		dataType: int64
+		formatString: 0
+		lineageTag: e7e5c759-49c7-4b25-bf2a-9f0b82ce3d71
+		summarizeBy: sum
+		sourceColumn: Forecast Development Cost per sqm
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Phase 1 Comparable Price per sqm'
+		dataType: int64
+		formatString: 0
+		lineageTag: 426e6ab7-eda9-43ca-8e37-4b332cd0b681
+		summarizeBy: sum
+		sourceColumn: Phase 1 Comparable Price per sqm
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Predicted Market Price (today)'
+		dataType: int64
+		formatString: 0
+		lineageTag: 36947b8a-beac-4227-8dd5-dffcf14976a0
+		summarizeBy: sum
+		sourceColumn: Predicted Market Price (today)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Predicted Market Price'
+		dataType: int64
+		formatString: 0
+		lineageTag: 4e62b99a-0953-4bef-8cfe-b603adeb9db6
+		summarizeBy: sum
+		sourceColumn: Predicted Market Price
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Suggested Minimum Price'
+		dataType: int64
+		formatString: 0
+		lineageTag: 07452e64-390c-4871-a187-90315eebc41a
+		summarizeBy: sum
+		sourceColumn: Suggested Minimum Price
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost-based Target Price'
+		dataType: int64
+		formatString: 0
+		lineageTag: 32b69d74-6995-46dc-aa51-49634d6bf5f4
+		summarizeBy: sum
+		sourceColumn: Cost-based Target Price
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Suggested Maximum Price'
+		dataType: int64
+		formatString: 0
+		lineageTag: c0a71c7a-598c-4625-8a3f-0f94a017aac1
+		summarizeBy: sum
+		sourceColumn: Suggested Maximum Price
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Recommended Launch Price'
+		dataType: int64
+		formatString: 0
+		lineageTag: 806585b6-a1b1-4e4b-879b-4a304fedf0af
+		summarizeBy: sum
+		sourceColumn: Recommended Launch Price
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Price Set By'
+		dataType: string
+		lineageTag: 61c5b168-8099-4963-94f9-0580375d97eb
+		summarizeBy: none
+		sourceColumn: Price Set By
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Recommended Price per sqm'
+		dataType: int64
+		formatString: 0
+		lineageTag: 4f18cd2e-24e1-4537-8c01-c930d4adb79e
+		summarizeBy: sum
+		sourceColumn: Recommended Price per sqm
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Launch Premium vs Phase 1 Comparable %'
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 0c570736-7987-42f4-8141-9fe5b8cb7530
+		summarizeBy: sum
+		sourceColumn: Launch Premium vs Phase 1 Comparable %
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Expected Gross Profit'
+		dataType: int64
+		formatString: 0
+		lineageTag: e1b2f313-7156-41f4-9310-d4cc299722db
+		summarizeBy: sum
+		sourceColumn: Expected Gross Profit
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Expected Gross Margin'
+		dataType: double
+		lineageTag: 88632b1c-b8be-45ab-9167-6ac39adeb479
+		summarizeBy: sum
+		sourceColumn: Expected Gross Margin
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition P2_Pricing = m
+		mode: import
+		source =
+				let
+				  Source = Excel.Workbook(File.Contents("E:\UAE\Projects\AlRiyad_Realstate\baghoosh\outputs\Baghoosh_Analysis.xlsx"), null, true),
+				  #"Navigation 1" = Source{[Item = "P2_Pricing", Kind = "Sheet"]}[Data],
+				  #"Promoted headers" = Table.PromoteHeaders(#"Navigation 1", [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"Unit ID", type text}, {"Cluster", type text}, {"Building", type text}, {"Property Type", type text}, {"Bedrooms", Int64.Type}, {"Built-up Area sqm", type number}, {"View Type", type text}, {"Sea View", type text}, {"Private Pool", type text}, {"Corner Unit", type text}, {"Phase 1 Construction Cost Benchmark (per sqm)", Int64.Type}, {"Construction Cost per sqm (today)", Int64.Type}, {"Forecast Construction Cost Increase %", type number}, {"Development Cost (today)", Int64.Type}, {"Forecast Development Cost", Int64.Type}, {"Forecast Development Cost per sqm", Int64.Type}, {"Phase 1 Comparable Price per sqm", Int64.Type}, {"Predicted Market Price (today)", Int64.Type}, {"Predicted Market Price", Int64.Type}, {"Suggested Minimum Price", Int64.Type}, {"Cost-based Target Price", Int64.Type}, {"Suggested Maximum Price", Int64.Type}, {"Recommended Launch Price", Int64.Type}, {"Price Set By", type text}, {"Recommended Price per sqm", Int64.Type}, {"Launch Premium vs Phase 1 Comparable %", type number}, {"Expected Gross Profit", Int64.Type}, {"Expected Gross Margin", type number}})
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table
+

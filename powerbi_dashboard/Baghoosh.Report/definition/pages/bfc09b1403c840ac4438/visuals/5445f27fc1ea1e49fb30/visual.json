@@ -1,0 +1,158 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "5445f27fc1ea1e49fb30",
+  "position": {
+    "x": 28,
+    "y": 712,
+    "z": 14000,
+    "height": 340,
+    "width": 1864,
+    "tabOrder": 14000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "P1_Investment"
+                    }
+                  },
+                  "Property": "Unit ID"
+                }
+              },
+              "queryRef": "P1_Investment.Unit ID",
+              "nativeQueryRef": "Unit ID"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "P1_Investment"
+                    }
+                  },
+                  "Property": "Property Type"
+                }
+              },
+              "queryRef": "P1_Investment.Property Type",
+              "nativeQueryRef": "Property Type"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "P1_Investment"
+                    }
+                  },
+                  "Property": "List Price"
+                }
+              },
+              "queryRef": "P1_Investment.List Price",
+              "nativeQueryRef": "List Price"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "P1_Investment"
+                    }
+                  },
+                  "Property": "Expected Annual Rental Value"
+                }
+              },
+              "queryRef": "P1_Investment.Expected Annual Rental Value",
+              "nativeQueryRef": "Expected Annual Rental Value"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "P1_Investment"
+                    }
+                  },
+                  "Property": "Estimated Rental Yield %"
+                }
+              },
+              "queryRef": "P1_Investment.Estimated Rental Yield %",
+              "nativeQueryRef": "Estimated Rental Yield %"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "P1_Investment"
+                    }
+                  },
+                  "Property": "Estimated Annual Appreciation %"
+                }
+              },
+              "queryRef": "P1_Investment.Estimated Annual Appreciation %",
+              "nativeQueryRef": "Estimated Annual Appreciation %"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "P1_Investment"
+                    }
+                  },
+                  "Property": "Estimated Value at Handover"
+                }
+              },
+              "queryRef": "P1_Investment.Estimated Value at Handover",
+              "nativeQueryRef": "Estimated Value at Handover"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "P1_Investment"
+                    }
+                  },
+                  "Property": "Investment Attractiveness Score"
+                }
+              },
+              "queryRef": "P1_Investment.Investment Attractiveness Score",
+              "nativeQueryRef": "Investment Attractiveness Score"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Ranked units (click the score header to sort)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,174 @@
+table Fact_Unit_Pricing
+	lineageTag: e03424ab-a0aa-445b-aab6-c3f551447a6b
+
+	column 'Unit ID'
+		dataType: string
+		lineageTag: e9f52032-a37b-4bb1-b418-54cee602bb7e
+		summarizeBy: none
+		sourceColumn: Unit ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Minimum Acceptable Margin %'
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: f4368796-1584-4c13-8eb2-8a819744ca03
+		summarizeBy: sum
+		sourceColumn: Minimum Acceptable Margin %
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Target Gross Margin %'
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: edd08954-95b4-4809-9054-57ce5e3593d5
+		summarizeBy: sum
+		sourceColumn: Target Gross Margin %
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Minimum Viable Price'
+		dataType: double
+		lineageTag: 65e2e336-788d-469c-9f63-a856e1935a95
+		summarizeBy: sum
+		sourceColumn: Minimum Viable Price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Recommended Selling Price'
+		dataType: double
+		lineageTag: 2223a357-367d-4f22-986a-fff7eff8ef03
+		summarizeBy: sum
+		sourceColumn: Recommended Selling Price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'List Price'
+		dataType: int64
+		formatString: 0
+		lineageTag: 492e86d4-23bb-4198-a981-4b4f8ef78ace
+		summarizeBy: sum
+		sourceColumn: List Price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"Fact_Unit_Pricing","TableItemName":"List Price (bins)","ObjectType":4},"LinkType":"UsedInGroup"}]
+
+	column 'Cash Price'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5f867a6e-0762-4d2c-9a8e-774569f62289
+		summarizeBy: sum
+		sourceColumn: Cash Price
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Payment Plan'
+		dataType: string
+		lineageTag: 36ccac98-8a6b-48d7-828a-8335bb89f597
+		summarizeBy: none
+		sourceColumn: Payment Plan
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Price per sqm'
+		dataType: double
+		lineageTag: f42f4878-303e-42c9-9504-ef2b2cf05f18
+		summarizeBy: sum
+		sourceColumn: Price per sqm
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Gross Profit'
+		dataType: double
+		lineageTag: 36c564bd-3595-4f7f-984e-f6d5e4c87b71
+		summarizeBy: sum
+		sourceColumn: Gross Profit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Gross Margin %'
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 4a19e981-cd83-4aab-b719-e753a5705cbb
+		summarizeBy: sum
+		sourceColumn: Gross Margin %
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Down Payment Amount'
+		dataType: int64
+		formatString: 0
+		lineageTag: a0e28ad6-d839-4fc1-af07-b198699dc9ed
+		summarizeBy: sum
+		sourceColumn: Down Payment Amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Monthly Instalment Estimate'
+		dataType: double
+		lineageTag: 0c4e50a4-38fc-47ec-9d9b-c3ecd9e36912
+		summarizeBy: sum
+		sourceColumn: Monthly Instalment Estimate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'List Price (bins)' =
+			IF(
+				ISBLANK('Fact_Unit_Pricing'[List Price]),
+				BLANK(),
+				INT('Fact_Unit_Pricing'[List Price] / 5000000) * 5000000
+			)
+		formatString: 0
+		lineageTag: 510dde25-34b6-44c0-a7ca-7d80eca8b1e3
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "Fact_Unit_Pricing"
+				          }
+				        },
+				        "Property": "List Price"
+				      }
+				    }
+				  ],
+				  "binningMetadata": {
+				    "binSize": {
+				      "value": 5000000.0,
+				      "unit": 0
+				    }
+				  }
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"f","Entity":"Fact_Unit_Pricing"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"List Price"}}],"BinItem":{"Expression":{"Floor":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"f"}},"Property":"List Price"}},"Size":5000000.0}}}}
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_Unit_Pricing = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("E:\UAE\Projects\AlRiyad_Realstate\baghoosh\data\cleansed\csv\Fact_Unit_Pricing.csv"), [Delimiter = ",", Columns = 13, Encoding = 65001, QuoteStyle = QuoteStyle.None]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"Unit ID", type text}, {"Minimum Acceptable Margin %", type number}, {"Target Gross Margin %", type number}, {"Minimum Viable Price", type number}, {"Recommended Selling Price", type number}, {"List Price", Int64.Type}, {"Cash Price", Int64.Type}, {"Payment Plan", type text}, {"Price per sqm", type number}, {"Gross Profit", type number}, {"Gross Margin %", type number}, {"Down Payment Amount", Int64.Type}, {"Monthly Instalment Estimate", type number}})
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table
+

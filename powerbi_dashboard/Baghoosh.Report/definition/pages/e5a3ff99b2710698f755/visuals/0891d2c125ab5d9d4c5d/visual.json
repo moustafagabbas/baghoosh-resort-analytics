@@ -1,0 +1,172 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "0891d2c125ab5d9d4c5d",
+  "position": {
+    "x": 28,
+    "y": 712,
+    "z": 15000,
+    "height": 340,
+    "width": 1864,
+    "tabOrder": 15000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Broker"
+                    }
+                  },
+                  "Property": "Broker Name"
+                }
+              },
+              "queryRef": "Dim_Broker.Broker Name",
+              "nativeQueryRef": "Broker Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Dim_Broker"
+                    }
+                  },
+                  "Property": "Sales Team"
+                }
+              },
+              "queryRef": "Dim_Broker.Sales Team",
+              "nativeQueryRef": "Sales Team"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Enquiries"
+                }
+              },
+              "queryRef": "_Measures.Enquiries",
+              "nativeQueryRef": "Enquiries"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Viewings"
+                }
+              },
+              "queryRef": "_Measures.Viewings",
+              "nativeQueryRef": "Viewings"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Reservations"
+                }
+              },
+              "queryRef": "_Measures.Reservations",
+              "nativeQueryRef": "Reservations"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Sales"
+                }
+              },
+              "queryRef": "_Measures.Sales",
+              "nativeQueryRef": "Sales"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Enquiry to Sale %"
+                }
+              },
+              "queryRef": "_Measures.Enquiry to Sale %",
+              "nativeQueryRef": "Enquiry to Sale %"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Sales Value"
+                }
+              },
+              "queryRef": "_Measures.Sales Value",
+              "nativeQueryRef": "Sales Value"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Average Discount vs List"
+                }
+              },
+              "queryRef": "_Measures.Average Discount vs List",
+              "nativeQueryRef": "Average Discount vs List"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true,
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Broker performance (Unassigned = leads with no broker recorded)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

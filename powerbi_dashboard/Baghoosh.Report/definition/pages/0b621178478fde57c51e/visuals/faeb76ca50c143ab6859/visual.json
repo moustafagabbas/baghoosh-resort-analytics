@@ -1,0 +1,116 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "faeb76ca50c143ab6859",
+  "position": {
+    "x": 28,
+    "y": 661,
+    "z": 12000,
+    "height": 391,
+    "width": 481.1,
+    "tabOrder": 12000
+  },
+  "visual": {
+    "visualType": "scatterChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Unit_Features"
+                    }
+                  },
+                  "Property": "Unit ID"
+                }
+              },
+              "queryRef": "Unit_Features.Unit ID",
+              "nativeQueryRef": "Unit ID",
+              "active": true
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Unit_Features"
+                    }
+                  },
+                  "Property": "Sales Status"
+                }
+              },
+              "queryRef": "Unit_Features.Sales Status",
+              "nativeQueryRef": "Sales Status"
+            }
+          ]
+        },
+        "X": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Unit Launch Premium %"
+                }
+              },
+              "queryRef": "_Measures.Unit Launch Premium %",
+              "nativeQueryRef": "Unit Launch Premium %",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Unit Days on Market"
+                }
+              },
+              "queryRef": "_Measures.Unit Days on Market",
+              "nativeQueryRef": "Unit Days on Market"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Launch pricing vs days on market'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

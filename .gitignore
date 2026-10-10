@@ -1,0 +1,24 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Power BI local files (cache and per-user settings)
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+
+# Office temporary files
+~$*
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Old empty Power BI file (the real report is the .pbip project)
+powerbi_dashboard/Baghoosh_Dashboard.pbix
+
+# Jupyter and Streamlit local files
+.streamlit/secrets.toml

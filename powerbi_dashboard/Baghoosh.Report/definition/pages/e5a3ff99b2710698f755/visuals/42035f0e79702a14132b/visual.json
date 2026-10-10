@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "42035f0e79702a14132b",
+  "position": {
+    "x": 1596.3,
+    "y": 216,
+    "z": 10000,
+    "height": 120,
+    "width": 295.7,
+    "tabOrder": 10000
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Average Discount vs List"
+                }
+              },
+              "queryRef": "_Measures.Average Discount vs List",
+              "nativeQueryRef": "Average Discount vs List"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

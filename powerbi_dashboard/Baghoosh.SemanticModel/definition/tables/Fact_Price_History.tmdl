@@ -1,0 +1,72 @@
+table Fact_Price_History
+	lineageTag: 7028fcd4-5735-4d2e-9d9a-c471a8d25921
+
+	column 'Unit ID'
+		dataType: string
+		lineageTag: 757450c9-7b87-4d6c-9b67-5328ee2ff123
+		summarizeBy: none
+		sourceColumn: Unit ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Price Version'
+		dataType: int64
+		formatString: 0
+		lineageTag: e5aefc5d-2eba-480f-8112-cea05c112817
+		summarizeBy: sum
+		sourceColumn: Price Version
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Effective Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 6842bc79-932b-410b-91c8-43f15f856dd9
+		summarizeBy: none
+		sourceColumn: Effective Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'List Price'
+		dataType: int64
+		formatString: 0
+		lineageTag: fafb4268-d5e5-437e-bc4b-b88d07ce675a
+		summarizeBy: sum
+		sourceColumn: List Price
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cash Price'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0373e0af-0a74-4d57-a905-06bb4e4cc479
+		summarizeBy: sum
+		sourceColumn: Cash Price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column 'Price Change %'
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: ecb7783b-fdf4-493d-a08b-81a1a1bc2ab2
+		summarizeBy: sum
+		sourceColumn: Price Change %
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_Price_History = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("E:\UAE\Projects\AlRiyad_Realstate\baghoosh\data\cleansed\csv\Fact_Price_History.csv"), [Delimiter = ",", Columns = 6, Encoding = 65001, QuoteStyle = QuoteStyle.None]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"Unit ID", type text}, {"Price Version", Int64.Type}, {"Effective Date", type date}, {"List Price", Int64.Type}, {"Cash Price", Int64.Type}, {"Price Change %", type number}})
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,50 @@
+table Dim_Payment_Plan
+	lineageTag: ec2f2a4e-c9c1-46e4-a98f-b989dbd9ef4b
+
+	column 'Payment Plan'
+		dataType: string
+		lineageTag: 7f783cec-a362-4638-b5f4-f6baf5b26ed8
+		summarizeBy: none
+		sourceColumn: Payment Plan
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Down Payment %'
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 887759b2-606f-42d4-a0b6-4b3fd6613dfb
+		summarizeBy: sum
+		sourceColumn: Down Payment %
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Payment Duration Years'
+		dataType: int64
+		formatString: 0
+		lineageTag: 3fece648-2b87-41a4-aea8-e5d7a52b2efd
+		summarizeBy: sum
+		sourceColumn: Payment Duration Years
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Payment Plan Premium %'
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 5bb4c5c1-9ffb-4ae2-875f-049789cb8284
+		summarizeBy: sum
+		sourceColumn: Payment Plan Premium %
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Payment_Plan = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("E:\UAE\Projects\AlRiyad_Realstate\baghoosh\data\cleansed\csv\Dim_Payment_Plan.csv"), [Delimiter = ",", Columns = 4, Encoding = 65001, QuoteStyle = QuoteStyle.None]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"Payment Plan", type text}, {"Down Payment %", type number}, {"Payment Duration Years", Int64.Type}, {"Payment Plan Premium %", type number}})
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table
+

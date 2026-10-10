@@ -1,0 +1,314 @@
+table Unit_Features
+	lineageTag: 4a72d654-4d3c-4bc8-bb91-f7e3759e6ef5
+
+	column 'Unit ID'
+		dataType: string
+		lineageTag: 3133939d-7b59-4bef-bdef-0f78df0a952b
+		summarizeBy: none
+		sourceColumn: Unit ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cluster
+		dataType: string
+		lineageTag: 2fdf1756-efe8-4334-827b-9b63d10da49e
+		summarizeBy: none
+		sourceColumn: Cluster
+
+		annotation SummarizationSetBy = Automatic
+
+	column Building
+		dataType: string
+		lineageTag: d3abb662-0657-4b06-b7bf-129853db35e4
+		summarizeBy: none
+		sourceColumn: Building
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Property Type'
+		dataType: string
+		lineageTag: 25b874b5-7f82-4d69-aa48-c7ed734565af
+		summarizeBy: none
+		sourceColumn: Property Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Bedrooms
+		dataType: int64
+		formatString: 0
+		lineageTag: ccf790a2-2e42-4717-9b8f-b30d02707e41
+		summarizeBy: sum
+		sourceColumn: Bedrooms
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'View Type'
+		dataType: string
+		lineageTag: a3d0b2ef-3a4a-480d-90f9-0fde80214be6
+		summarizeBy: none
+		sourceColumn: View Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sea View'
+		dataType: string
+		lineageTag: e38decc1-e8af-4c80-8462-b0d0f9ef4ba7
+		summarizeBy: none
+		sourceColumn: Sea View
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Private Pool'
+		dataType: string
+		lineageTag: da335787-009d-457f-9866-b4d1e3f99e66
+		summarizeBy: none
+		sourceColumn: Private Pool
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Built-up Area sqm'
+		dataType: int64
+		formatString: 0
+		lineageTag: abe70267-53b7-4fa7-a928-68bfde8c5652
+		summarizeBy: sum
+		sourceColumn: Built-up Area sqm
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Availability Status'
+		dataType: string
+		lineageTag: be61f753-33ec-4238-8ad4-2d3033d38113
+		summarizeBy: none
+		sourceColumn: Availability Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'List Price'
+		dataType: int64
+		formatString: 0
+		lineageTag: fd311e1a-fc7d-4381-a705-54f0aef7555f
+		summarizeBy: sum
+		sourceColumn: List Price
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Price per sqm'
+		dataType: double
+		lineageTag: 092392a3-200b-43c3-b9ac-f893551390fc
+		summarizeBy: sum
+		sourceColumn: Price per sqm
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Payment Plan'
+		dataType: string
+		lineageTag: f62e9508-c678-461b-b7b1-896e28254e71
+		summarizeBy: none
+		sourceColumn: Payment Plan
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Number of Enquiries'
+		dataType: int64
+		formatString: 0
+		lineageTag: f01eb237-ad44-448b-b446-36203799521f
+		summarizeBy: sum
+		sourceColumn: Number of Enquiries
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Number of Viewings'
+		dataType: int64
+		formatString: 0
+		lineageTag: 482d5091-216d-4243-9306-e9e0d2fbaa09
+		summarizeBy: sum
+		sourceColumn: Number of Viewings
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Enquiry-to-Viewing Conversion'
+		dataType: double
+		lineageTag: e7c26d40-0847-4781-9cae-9098f5b01684
+		summarizeBy: sum
+		sourceColumn: Enquiry-to-Viewing Conversion
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Reservation Status'
+		dataType: string
+		lineageTag: a49ba7b1-7ce6-471f-9b85-20b669ad5ee0
+		summarizeBy: none
+		sourceColumn: Reservation Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Number of Reservations'
+		dataType: int64
+		formatString: 0
+		lineageTag: 69a34779-6ec1-4bf3-af3c-6e6ee714c538
+		summarizeBy: sum
+		sourceColumn: Number of Reservations
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Status'
+		dataType: string
+		lineageTag: 7ecfe120-75d6-45d8-ac2d-0bb575b51508
+		summarizeBy: none
+		sourceColumn: Sales Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Days on Market'
+		dataType: int64
+		formatString: 0
+		lineageTag: c08e5976-e1e8-4e3a-b663-26eafa18d594
+		summarizeBy: sum
+		sourceColumn: Days on Market
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Enquiries per Month Listed'
+		dataType: double
+		lineageTag: b0e1994e-c5a1-4aab-9a98-161e872e54ec
+		summarizeBy: sum
+		sourceColumn: Enquiries per Month Listed
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Last Price Change %'
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 3ff428b5-e3cb-43bf-9422-cd77b6129064
+		summarizeBy: sum
+		sourceColumn: Last Price Change %
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Number of Price Reductions'
+		dataType: int64
+		formatString: 0
+		lineageTag: ed89846e-5d12-4d93-9c2a-001fd79f8d9b
+		summarizeBy: sum
+		sourceColumn: Number of Price Reductions
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Discount %'
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 920cf15c-be02-4f93-8fd0-e049169bdcf3
+		summarizeBy: sum
+		sourceColumn: Discount %
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Launch List Price'
+		dataType: int64
+		formatString: 0
+		lineageTag: a5fc8dae-aa74-464d-926a-59b8cfb675f0
+		summarizeBy: sum
+		sourceColumn: Launch List Price
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Launch Premium over Recommended %'
+		dataType: double
+		lineageTag: 0b40157e-3723-4bbb-9ffc-3db780e5a937
+		summarizeBy: sum
+		sourceColumn: Launch Premium over Recommended %
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Months Until Delivery'
+		dataType: int64
+		formatString: 0
+		lineageTag: 943e7448-1569-46ae-9daa-6d774b3d1c8c
+		summarizeBy: sum
+		sourceColumn: Months Until Delivery
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Price Band'
+		dataType: string
+		lineageTag: e6f215bb-d0bb-4e64-b943-a825c59fe647
+		summarizeBy: none
+		sourceColumn: Price Band
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Pricing Competitiveness Score'
+		dataType: double
+		lineageTag: e085cd6f-be77-4ebe-abfa-3c92dac4c698
+		summarizeBy: sum
+		sourceColumn: Pricing Competitiveness Score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"Unit_Features","TableItemName":"Pricing Competitiveness Score (bins)","ObjectType":4},"LinkType":"UsedInGroup"}]
+
+	column 'Pricing Competitiveness Score (bins)' =
+			IF(
+				ISBLANK('Unit_Features'[Pricing Competitiveness Score]),
+				BLANK(),
+				IF(
+					'Unit_Features'[Pricing Competitiveness Score] >= 0,
+					ROUNDDOWN('Unit_Features'[Pricing Competitiveness Score] / 20, 0) * 20,
+					ROUNDUP('Unit_Features'[Pricing Competitiveness Score] / 20, 0) * 20
+				)
+			)
+		lineageTag: 1866b5cf-9f03-4615-9d82-e557bd057fa6
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "Unit_Features"
+				          }
+				        },
+				        "Property": "Pricing Competitiveness Score"
+				      }
+				    }
+				  ],
+				  "binningMetadata": {
+				    "binSize": {
+				      "value": 20.0,
+				      "unit": 0
+				    }
+				  }
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"u","Entity":"Unit_Features"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"u"}},"Property":"Pricing Competitiveness Score"}}],"BinItem":{"Expression":{"Floor":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"u"}},"Property":"Pricing Competitiveness Score"}},"Size":20.0}}}}
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Unit_Features = m
+		mode: import
+		source =
+				let
+				  Source = Excel.Workbook(File.Contents("E:\UAE\Projects\AlRiyad_Realstate\baghoosh\outputs\Baghoosh_Analysis.xlsx"), null, true),
+				  #"Navigation 1" = Source{[Item = "Unit_Features", Kind = "Sheet"]}[Data],
+				  #"Promoted headers" = Table.PromoteHeaders(#"Navigation 1", [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"Unit ID", type text}, {"Cluster", type text}, {"Building", type text}, {"Property Type", type text}, {"Bedrooms", Int64.Type}, {"View Type", type text}, {"Sea View", type text}, {"Private Pool", type text}, {"Built-up Area sqm", Int64.Type}, {"Availability Status", type text}, {"List Price", Int64.Type}, {"Price per sqm", type number}, {"Payment Plan", type text}, {"Number of Enquiries", Int64.Type}, {"Number of Viewings", Int64.Type}, {"Enquiry-to-Viewing Conversion", type number}, {"Reservation Status", type text}, {"Number of Reservations", Int64.Type}, {"Sales Status", type text}, {"Days on Market", Int64.Type}, {"Enquiries per Month Listed", type number}, {"Last Price Change %", type number}, {"Number of Price Reductions", Int64.Type}, {"Discount %", type number}, {"Launch List Price", Int64.Type}, {"Launch Premium over Recommended %", type number}, {"Months Until Delivery", Int64.Type}, {"Price Band", type text}, {"Pricing Competitiveness Score", type number}})
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table
+

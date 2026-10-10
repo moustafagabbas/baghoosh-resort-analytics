@@ -1,0 +1,24 @@
+table Dim_Lead_Source
+	lineageTag: 0b15d4d1-9b67-4710-909e-74d55d5c1ad1
+
+	column 'Lead Source'
+		dataType: string
+		lineageTag: 4f9c3d48-f6af-4bc6-a84f-89b859c197d8
+		summarizeBy: none
+		sourceColumn: Lead Source
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Lead_Source = m
+		mode: import
+		source =
+				let
+				  Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WCijKL0gtKqlUCMgvKknMUYrViVbyTS1JBDOcivKzU4sUglLTUouKoJLhiTnZup55YLZrRWZxSWZeuoJzTmZqXglErAzMigUA", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Lead Source" = _t]),
+				    #"Replaced Value" = Table.ReplaceValue(Source,"Property Portal","Olx",Replacer.ReplaceText,{"Lead Source"})
+				in
+				    #"Replaced Value"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

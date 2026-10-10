@@ -1,0 +1,107 @@
+table Fact_Reservations
+	lineageTag: b2f0f3a4-f0dc-476d-b15f-3720b4a74623
+
+	column 'Reservation ID'
+		dataType: string
+		lineageTag: c2c05ded-8498-453a-a237-530222caf53f
+		summarizeBy: none
+		sourceColumn: Reservation ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Lead ID'
+		dataType: string
+		lineageTag: 5778f20f-0844-4f64-a009-272113071e28
+		summarizeBy: none
+		sourceColumn: Lead ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Unit ID'
+		dataType: string
+		lineageTag: edaee8d4-c0f8-4c04-83b4-f7be2a6d522e
+		summarizeBy: none
+		sourceColumn: Unit ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Broker ID'
+		dataType: string
+		lineageTag: f2e7cbd8-eeb1-4ae8-b268-4c2a48bcd8a9
+		summarizeBy: none
+		sourceColumn: Broker ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Reservation Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 6688c804-18e0-4fe3-abc0-816ebe0e6211
+		summarizeBy: none
+		sourceColumn: Reservation Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Reservation Expiry Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 55fb80c8-ad28-407b-868f-c009b5d8a65c
+		summarizeBy: none
+		sourceColumn: Reservation Expiry Date
+
+		variation Variation
+			isDefault
+			relationship: d66f5822-b655-4a02-a35b-57a9f52e1a51
+			defaultHierarchy: LocalDateTable_a61f5a51-5a05-437c-8133-88994e36e9d5.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Reservation Status'
+		dataType: string
+		lineageTag: 46987697-cbcf-4277-9673-a918cf916ee6
+		summarizeBy: none
+		sourceColumn: Reservation Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Payment Plan'
+		dataType: string
+		lineageTag: cb9db3b5-9e79-4d9f-b8fe-0e95f59b9622
+		summarizeBy: none
+		sourceColumn: Payment Plan
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Agreed Price'
+		dataType: int64
+		formatString: 0
+		lineageTag: 1f8080f5-0786-4dc2-9552-6a5881c69fd6
+		summarizeBy: sum
+		sourceColumn: Agreed Price
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Lead Source' = LOOKUPVALUE ( Fact_Leads[Lead Source], Fact_Leads[Lead ID], Fact_Reservations[Lead ID] )
+		lineageTag: 2602de4f-01e3-4af6-a60b-028a03d3cfe2
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_Reservations = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("E:\UAE\Projects\AlRiyad_Realstate\baghoosh\data\cleansed\csv\Fact_Reservations.csv"), [Delimiter = ",", Columns = 9, Encoding = 65001, QuoteStyle = QuoteStyle.None]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers",{{"Reservation ID", type text}, {"Lead ID", type text}, {"Unit ID", type text}, {"Broker ID", type text}, {"Reservation Date", type date}, {"Reservation Expiry Date", type date}, {"Reservation Status", type text}, {"Payment Plan", type text}, {"Agreed Price", Int64.Type}})
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

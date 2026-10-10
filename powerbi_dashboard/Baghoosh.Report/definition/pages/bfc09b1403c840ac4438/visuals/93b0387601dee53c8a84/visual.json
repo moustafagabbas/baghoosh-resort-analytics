@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "93b0387601dee53c8a84",
+  "position": {
+    "x": 341.7,
+    "y": 216,
+    "z": 6000,
+    "height": 120,
+    "width": 295.7,
+    "tabOrder": 6000
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Average Appreciation"
+                }
+              },
+              "queryRef": "_Measures.Average Appreciation",
+              "nativeQueryRef": "Average Appreciation"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

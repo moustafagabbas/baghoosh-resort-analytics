@@ -1,0 +1,161 @@
+relationship 227bcfea-a440-46b2-9521-db362a05c3db
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Dim_Unit.'Expected Handover Date'
+	toColumn: LocalDateTable_52447715-fab1-4850-acf6-c8b548036ac4.Date
+
+relationship AutoDetected_d5c05a2d-a44a-4019-8152-a2c5fb47cdfb
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: Unit_Facilities.'Unit ID'
+	toColumn: Dim_Unit.'Unit ID'
+
+relationship AutoDetected_f835a546-eab1-45b6-8aec-ef45717a2540
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: Fact_Unit_Cost.'Unit ID'
+	toColumn: Dim_Unit.'Unit ID'
+
+relationship AutoDetected_e175c03a-eac2-4978-8dcd-6440fcf203dd
+	fromColumn: Fact_Unit_Pricing.'Payment Plan'
+	toColumn: Dim_Payment_Plan.'Payment Plan'
+
+relationship AutoDetected_e64e66d9-9116-43fa-8127-a599b9521c96
+	fromColumn: Fact_Price_History.'Unit ID'
+	toColumn: Dim_Unit.'Unit ID'
+
+relationship AutoDetected_de60443b-e44b-4aa0-a26d-1e89afadf90f
+	fromColumn: Fact_Leads.'Unit ID'
+	toColumn: Dim_Unit.'Unit ID'
+
+relationship AutoDetected_fc90bea4-a714-492f-92ad-1b25d08a2337
+	fromColumn: Fact_Viewings.'Unit ID'
+	toColumn: Dim_Unit.'Unit ID'
+
+relationship AutoDetected_356bca7f-b51e-4bab-9d3c-d11c20b68482
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: Fact_Viewings.'Lead ID'
+	toColumn: Fact_Leads.'Lead ID'
+
+relationship d66f5822-b655-4a02-a35b-57a9f52e1a51
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Fact_Reservations.'Reservation Expiry Date'
+	toColumn: LocalDateTable_a61f5a51-5a05-437c-8133-88994e36e9d5.Date
+
+relationship AutoDetected_4952cc69-4970-4ce8-9620-8c97e57f805d
+	fromColumn: Fact_Reservations.'Unit ID'
+	toColumn: Dim_Unit.'Unit ID'
+
+relationship AutoDetected_ac4377b3-6f22-4201-93d2-9d8eb3b25096
+	fromColumn: Fact_Sales.'Unit ID'
+	toColumn: Dim_Unit.'Unit ID'
+
+relationship AutoDetected_d2ae2e13-f1f9-43c1-911a-0862ca133b07
+	fromColumn: Fact_Sales.'Payment Plan'
+	toColumn: Dim_Payment_Plan.'Payment Plan'
+
+relationship AutoDetected_cfa9178f-b967-4615-ae8f-0a254c7afc5a
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: Fact_Sales.'Reservation ID'
+	toColumn: Fact_Reservations.'Reservation ID'
+
+relationship AutoDetected_4a90d880-fe65-43b7-a602-a771646d6691
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: Unit_Features.'Unit ID'
+	toColumn: Dim_Unit.'Unit ID'
+
+relationship AutoDetected_5e215526-14ff-48d8-8da5-ccb079486246
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: P1_Investment.'Unit ID'
+	toColumn: Dim_Unit.'Unit ID'
+
+relationship AutoDetected_310081c3-d382-40ae-b8b6-7a6b95ee8268
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: P2_Pricing.'Unit ID'
+	toColumn: Dim_Unit.'Unit ID'
+
+relationship AutoDetected_9ba2d56c-3e28-4b0a-9e64-4f8d881b5157
+	isActive: false
+	fromColumn: Unit_Features.'Payment Plan'
+	toColumn: Dim_Payment_Plan.'Payment Plan'
+
+relationship AutoDetected_b9b4eed7-97f0-447a-98d4-4eb42b0b19e3
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: Unit_Features.'Price per sqm'
+	toColumn: Fact_Unit_Pricing.'Price per sqm'
+
+relationship AutoDetected_9e289db0-ee96-4ebb-95a7-dba7958c0787
+	fromColumn: Fact_Leads.'Broker ID'
+	toColumn: Dim_Broker.'Broker ID'
+
+relationship AutoDetected_041a58d5-6a08-4975-9301-aef374069da5
+	fromColumn: Fact_Reservations.'Broker ID'
+	toColumn: Dim_Broker.'Broker ID'
+
+relationship AutoDetected_cd57777e-a561-426b-87ea-581332e0cce3
+	fromColumn: Fact_Sales.'Broker ID'
+	toColumn: Dim_Broker.'Broker ID'
+
+relationship AutoDetected_adb610ba-f9ae-48f0-97c2-dab2ded944ff
+	fromColumn: Fact_Leads.'Lead Source'
+	toColumn: Dim_Lead_Source.'Lead Source'
+
+relationship 8378e8a5-4ac3-4a4e-3890-1efd4cbcb4d0
+	fromColumn: Fact_Unit_Pricing.'Unit ID'
+	toColumn: Dim_Unit.'Unit ID'
+
+relationship b327fcb4-611e-3ce9-c79e-972d5473a3ee
+	fromColumn: Fact_Reservations.'Payment Plan'
+	toColumn: Dim_Payment_Plan.'Payment Plan'
+
+relationship 5cbcea1d-e2cf-f7ea-ea9e-a6c5f4ba9693
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: Fact_Reservations.'Lead ID'
+	toColumn: Fact_Leads.'Lead ID'
+
+relationship d8d0e7c7-a455-8b91-9a31-b2671e8fa1b7
+	fromColumn: Fact_Viewings.'Broker ID'
+	toColumn: Dim_Broker.'Broker ID'
+
+relationship deaa2749-b6d1-a71e-e405-03ebd66c1319
+	fromColumn: Fact_Viewings.'Lead Source'
+	toColumn: Dim_Lead_Source.'Lead Source'
+
+relationship 1ae27ffb-b62b-caed-c8be-d5e1bd17400f
+	fromColumn: Fact_Reservations.'Lead Source'
+	toColumn: Dim_Lead_Source.'Lead Source'
+
+relationship 29a201d7-a328-1512-87b2-c652f9fe60e5
+	fromColumn: Fact_Sales.'Lead Source'
+	toColumn: Dim_Lead_Source.'Lead Source'
+
+relationship 2a624d09-1e60-4603-077b-64c454e035d6
+	fromColumn: Fact_Price_History.'Effective Date'
+	toColumn: Dim_Date.Date
+
+relationship e6d166df-be51-439b-8d1f-66b191ea017b
+	fromColumn: Fact_Leads.'Created Date'
+	toColumn: Dim_Date.Date
+
+relationship 634f71ba-1f66-04c2-5d83-062523ec5317
+	fromColumn: Fact_Viewings.'Viewing Date'
+	toColumn: Dim_Date.Date
+
+relationship 3d6cae16-34f7-b9cf-3962-16d7f48ccf2a
+	fromColumn: Fact_Reservations.'Reservation Date'
+	toColumn: Dim_Date.Date
+
+relationship fac01dfd-d5dc-926a-bad2-645d29b01ace
+	fromColumn: Fact_Sales.'Contract Date'
+	toColumn: Dim_Date.Date
+

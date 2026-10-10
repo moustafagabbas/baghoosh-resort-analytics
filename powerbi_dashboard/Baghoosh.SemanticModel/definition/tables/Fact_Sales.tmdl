@@ -1,0 +1,113 @@
+table Fact_Sales
+	lineageTag: 4af9f7a2-d6c1-4d27-96a2-88c7f6796813
+
+	column 'Contract ID'
+		dataType: string
+		lineageTag: 1b949c82-4571-45c4-afd3-fd7f6be744ad
+		summarizeBy: none
+		sourceColumn: Contract ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Reservation ID'
+		dataType: string
+		lineageTag: 43ac3a41-ca6e-4bee-854f-eb08d096c982
+		summarizeBy: none
+		sourceColumn: Reservation ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Unit ID'
+		dataType: string
+		lineageTag: e9778045-c045-4a18-baa0-6833be2cff32
+		summarizeBy: none
+		sourceColumn: Unit ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Broker ID'
+		dataType: string
+		lineageTag: 4ace9bbe-6c9a-4566-92da-46e77925bc40
+		summarizeBy: none
+		sourceColumn: Broker ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Contract Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: e0d78fe0-eb28-4f90-a22b-3589c2e2761e
+		summarizeBy: none
+		sourceColumn: Contract Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Contract Price'
+		dataType: int64
+		formatString: 0
+		lineageTag: 4d1469a3-3d80-4c3b-b13b-b05be0ae5273
+		summarizeBy: sum
+		sourceColumn: Contract Price
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Payment Plan'
+		dataType: string
+		lineageTag: 6e1ca539-e61f-4fec-8167-550f57972bf0
+		summarizeBy: none
+		sourceColumn: Payment Plan
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Down Payment Amount'
+		dataType: int64
+		formatString: 0
+		lineageTag: 01eb3d8c-6c01-471e-8bd0-85dee9e7a01e
+		summarizeBy: sum
+		sourceColumn: Down Payment Amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Discount vs List %'
+		dataType: double
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: c943f9ae-cb83-4401-a9da-4cb041aa2ea0
+		summarizeBy: sum
+		sourceColumn: Discount vs List %
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Lead Source' = ```
+			
+			VAR _LeadID =
+			    LOOKUPVALUE (
+			        Fact_Reservations[Lead ID],
+			        Fact_Reservations[Reservation ID], 
+			        Fact_Sales[Reservation ID]
+			    )
+			RETURN
+			    LOOKUPVALUE (
+			        Fact_Leads[Lead Source],
+			        Fact_Leads[Lead ID], 
+			        _LeadID
+			    )
+			```
+		lineageTag: 698c3545-72bb-4e80-bc37-ba16a9e9553b
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_Sales = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("E:\UAE\Projects\AlRiyad_Realstate\baghoosh\data\cleansed\csv\Fact_Sales.csv"), [Delimiter = ",", Columns = 9, Encoding = 65001, QuoteStyle = QuoteStyle.None]),
+				  #"Promoted headers" = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"Contract ID", type text}, {"Reservation ID", type text}, {"Unit ID", type text}, {"Broker ID", type text}, {"Contract Date", type date}, {"Contract Price", Int64.Type}, {"Payment Plan", type text}, {"Down Payment Amount", Int64.Type}, {"Discount vs List %", type number}})
+				in
+				  #"Changed column type"
+
+	annotation PBI_ResultType = Table
+

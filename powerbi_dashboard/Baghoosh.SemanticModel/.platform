@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Baghoosh"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2f73a544-d0ab-45ae-b163-5e6d5ac717d1"
+  }
+}

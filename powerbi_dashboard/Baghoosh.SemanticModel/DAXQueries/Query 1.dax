@@ -1,0 +1,7 @@
+// Welcome to DAX query view! Learn more about DAX queries at https://aka.ms/dax-queries.
+// Right-click on tables, columns, or measures in the data pane to access quick queries, or ask Copilot for help writing DAX.
+
+// Select "Run" to try this sample DAX query.
+EVALUATE
+    
+                LOOKUPVALUE ( Fact_Unit_Pricing[Payment Plan], Fact_Unit_Pricing[Unit ID], Dim_Unit[Unit ID] )
