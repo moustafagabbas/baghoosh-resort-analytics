@@ -27,7 +27,7 @@
 </p>
 <p align="center">
   <img alt="Raw files" src="https://img.shields.io/badge/Raw%20files-15-4FD8D0?style=for-the-badge&labelColor=041B23">
-  <img alt="Data problems fixed" src="https://img.shields.io/badge/Data%20problems%20fixed-135-4FD8D0?style=for-the-badge&labelColor=041B23">
+  <img alt="Data problems fixed" src="https://img.shields.io/badge/Data%20problems%20fixed-121-4FD8D0?style=for-the-badge&labelColor=041B23">
 </p>
 
 <h3 align="center">From 15 messy department files to a pricing answer, a prediction model and three dashboards</h3>
@@ -44,9 +44,9 @@ Phase 1 has 320 homes on sale since April 2024, and sales are slowing.
 <table>
   <tr>
     <td align="center"><h2>144 / 320</h2>units sold (45%)</td>
-    <td align="center"><h2>EGP 1.79B</h2>contracted revenue</td>
+    <td align="center"><h2>1.79B EGP</h2>contracted revenue</td>
     <td align="center"><h2>~2.5 years</h2>to sell the rest at the current pace</td>
-    <td align="center"><h2>1,282</h2>data problems cleaned</td>
+    <td align="center"><h2>121</h2>data problems cleaned</td>
     <td align="center"><h2>0.70</h2>model accuracy (cross-validated)</td>
   </tr>
 </table>
@@ -81,14 +81,14 @@ Phase 1 has 320 homes on sale since April 2024, and sales are slowing.
 
 ```mermaid
 flowchart LR
-    A["15 raw files<br/>7 departments"] --> B["Cleaning<br/>about 25 logged fixes"]
-    B --> C["Star schema<br/>12 clean tables"]
-    B --> D["One row per unit<br/>59 features"]
-    C --> E["Power BI report<br/>5 pages, ~50 DAX measures"]
-    D --> F["EDA<br/>13 analyses, 12 charts"]
+    A["Raw source files"] --> B["Data cleaning<br/>& validation"]
+    B --> C["Star schema<br/>fact & dimension tables"]
+    B --> D["Unit-level dataset<br/>feature engineering"]
+    C --> E["Power BI report<br/>DAX measures & KPIs"]
+    D --> F["Exploratory analysis<br/>patterns & drivers"]
     F --> G["Logistic Regression<br/>will this unit sell?"]
     G --> H["Streamlit app<br/>what-if price tool"]
-    D --> I["HTML dashboard<br/>single offline file"]
+    D --> I["Offline (HTML)Dashboard<br/>"]
 ```
 
 ### 1. Cleaning 15 files that did not agree
