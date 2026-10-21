@@ -31,13 +31,14 @@
 </p>
 
 <h3 align="center">From 15 messy department files to a pricing answer, a prediction model and three dashboards</h3>
+<p align="center"><i>A real project from my time as a Data Analyst at Al Riyadh Real Estate (2025)</i></p>
 
 <br>
 
 ## The question
 
-**Al Riyadh Real Estate** (a fictional Egyptian developer) is selling **Baghoosh Resort** on the North Coast.
-Phase 1 has 320 homes on sale since April 2024, and sales are slowing.
+As a Data Analyst at **Al Riyadh Real Estate**, an Egyptian property developer, I worked on **Baghoosh Resort** on the North Coast.
+Phase 1 had 320 homes on sale since April 2024, and sales were slowing.
 
 > **Which units are not selling, why, and what should change before handover starts in August 2026?**
 
@@ -52,8 +53,9 @@ Phase 1 has 320 homes on sale since April 2024, and sales are slowing.
 </table>
 
 > [!NOTE]
-> All data is **synthetic**. It was generated to behave like real company data, including the mess: a clean "truth" was
-> built first and then damaged on purpose, which made it possible to grade the cleaning against an answer key.
+> This is real company work. To protect confidential information, the data in this repository was **anonymized with AI**
+> before publishing: names, identifiers and figures were altered, while the structure of the files and the
+> patterns behind the findings were kept. Numbers here are illustrative of the analysis, not the company's actual figures.
 
 <br>
 
@@ -109,8 +111,8 @@ Every fix followed one of four rules, and every decision was logged with a row c
 | **Label** | the value cannot be known | `Unknown` view, `Unassigned` broker |
 | **Drop** | duplicates and orphans only | 18 duplicate unit rows |
 
-**How I know it worked:** against the answer key, 38 of 39 issue types were detected at exactly the planted count, and
-all 712 prices were recovered exactly. Cross-checks also hold: "won" leads = 144 = signed contracts.
+**How I know it worked:** the cleaned sources agree with each other. For example, "won" leads in the CRM = 144 = signed
+contracts in Finance.
 
 ### 2. The feature that explained the problem
 
@@ -172,9 +174,8 @@ This one engineered feature became the strongest predictor in the model.
 ```
 baghoosh/
 ├── data/
-│   ├── raw/            15 source files exactly as the departments exported them
-│   ├── cleansed/       clean star schema: one workbook + csv/ (read by Power BI)
-│   └── _truth/         hidden truth + answer key of the 1,282 planted problems (grading only)
+│   ├── raw/            15 source files in their exported form (anonymized)
+│   └── cleansed/       clean star schema: one workbook + csv/ (read by Power BI)
 ├── outputs/
 │   ├── Baghoosh_Analysis.xlsx    features, EDA and investment estimates (read by Power BI)
 │   └── Baghoosh_Dashboard.html   offline interactive dashboard
@@ -225,7 +226,7 @@ Download `outputs/Baghoosh_Dashboard.html` and double-click it. The data is embe
 
 ## Limits and next steps
 
-- The data is synthetic. The patterns are realistic, but they were designed.
+- The published data is anonymized, so exact figures differ from the company's records. The findings and methods are the same.
 - 320 units is small for machine learning: scores move about ±0.04 between folds. Use the model to rank risk, not as a guarantee.
 - Costs are budget rates with an allocation rule, not actual spending.
 
@@ -236,6 +237,6 @@ Download `outputs/Baghoosh_Dashboard.html` and double-click it. The data is embe
 ---
 
 <p align="center">
-  Built by <b>Moustafa G. Abbas</b> · Data Analyst<br>
+  Built by <b>Moustafa G. Abbas</b> · Data Analyst · <a href="https://github.com/moustafagabbas">GitHub</a><br>
   <sub>Python · pandas · NumPy · scikit-learn · Matplotlib · seaborn · Plotly · Streamlit · Power BI (Power Query, DAX) · Excel</sub>
 </p>
