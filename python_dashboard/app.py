@@ -74,8 +74,7 @@ clusters = st.sidebar.multiselect("Cluster", sorted(units["cluster"].unique()), 
 types = st.sidebar.multiselect("Property type", sorted(units["property_type"].unique()),
                                default=sorted(units["property_type"].unique()))
 
-st.sidebar.caption("Phase 1 units only. Filters apply to every KPI and chart and to the Data tab "
-                   "(not to the Prediction tab). Data is synthetic, report date 30 Dec 2025.")
+st.sidebar.caption("Phase 1 units only. Filters apply to every KPI and chart and to the Data tab")
 
 # units that match the cluster / type filters
 filtered_units = units[units["cluster"].isin(clusters) & units["property_type"].isin(types)].copy()
